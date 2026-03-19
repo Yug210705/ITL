@@ -11,7 +11,7 @@ export default function AboutPage() {
         <div className="bg-bg-dark min-h-screen relative overflow-hidden">
             {/* Exact SVG glow from Ecosystem page */}
             <div className='absolute h-full w-full top-0 left-0 z-0 pointer-events-none'>
-                <svg width="full" height="1500" className="min-h-[190vh]" viewBox="0 0 1280 1607" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="100%" height="auto" className="min-h-[190vh] w-full" viewBox="0 0 1280 1607" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_201_1774_about)">
                         <path d="M467.322 658.503C274.221 569.998 50.8455 578.503 -6.17874 764.503C-46.8001 897 22.2139 1017.31 125.321 1061.5C422.846 1189 1094.82 1157.5 1317.82 936.5C1541.15 715.177 1549.82 339 1304.32 339C1167.32 339 1106.82 496.503 1019.82 578.503C854.929 733.92 611.321 724.503 467.322 658.503Z" fill="#0000FF" style={{ fill: "#0000FF;fill:color(display-p3 0.0000 0.0000 1.0000);fill-opacity:1" }} />
                     </g>
@@ -27,7 +27,7 @@ export default function AboutPage() {
                         <filter id="filter1_f_201_1774_about" x="-518" y="-91" width="2404.89" height="1697.32" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                             <feFlood floodOpacity="0" result="BackgroundImageFix" />
                             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                            <feGaussianBlur stdDeviation="225" result="effect1_foregroundBlur_201_1774" />
+                            <feGaussianBlur stdDeviation="300" result="effect1_foregroundBlur_201_1774" />
                         </filter>
                     </defs>
                 </svg>
