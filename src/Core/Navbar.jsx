@@ -9,9 +9,9 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="container mx-auto top-0 left-0 w-full py-8 z-50 bg-transparent border-b-[0.5px] border-[#FFFFFF29]">
-            <div className="flex justify-between items-center">
-                <Link to="/" className="flex items-center gap-3 text-white no-underline group pl-4 md:pl-8 lg:pl-12">
+        <nav className="fixed top-0 left-0 w-full py-8 z-50 bg-transparent border-b-[0.5px] border-[#FFFFFF29] px-6 md:px-12 lg:px-20">
+            <div className="flex justify-between items-center max-w-[1400px] mx-auto w-full">
+                <Link to="/" className="flex items-center gap-3 text-white no-underline group">
                     <span className="font-sans italic font-bold text-3xl tracking-wide group-hover:opacity-90 transition-opacity">
                         I.T.L
                     </span>
