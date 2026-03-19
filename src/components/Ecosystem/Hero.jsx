@@ -30,7 +30,7 @@ const Hero = () => {
                             ECOSYSTEM
                         </span>
 
-                        <h1 className="font-serif text-3xl md:text-5xl xl:text-6xl leading-[1.1] text-white mt-8 md:mt-10 tracking-tight">
+                        <h1 className="font-serif text-3xl md:text-5xl xl:text-6xl leading-[1.1] text-white mt-4 md:mt-6 tracking-tight">
                             One Vision.<br />
                             Four Pathways to Impact.
                         </h1>
