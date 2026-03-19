@@ -8,26 +8,30 @@ const tabsData = [
   {
       id: 'martinich-consulting',
       label: 'MARTINICH CONSULTING',
-      subtitle: 'ASSESSMENT & ADVISORY',
+      subtitle: 'STRATEGY & IMPLEMENTATION',
       title: 'Martinich Consulting',
       bullets: [
-          'Tailored leadership assessment and cultural analysis',
-          'Executive coaching and team development',
-          'Organizational alignment and strategy execution'
+          'Culture diagnostics and trust-building\ntransformations',
+          'Executive coaching and succession planning\nsupport',
+          'Tailored solutions co-created with your\nleadership team'
       ],
-      btnLabel: 'Visit Consulting →',
+      btnLabel: 'Visit Martinich Consulting →',
+      badge: 'PREMIUM ADVISORY',
+      mockupImg: '/images/martinich_mockup.png'
   },
   {
       id: 'luca-leader',
-      label: 'LUCA the Leader',
+      label: 'LUCA THE LEADER',
       subtitle: 'AWARENESS & ACCESS',
-      title: 'LUCA the Leader',
+      title: 'LUCA: The Leader',
       bullets: [
+          'Ride the Wave of Leadership with\na fun animated series',
           'Free resources and community-driven\nleadership awareness',
-          'Scholarship programs making quality training\naccessible to all',
-          'CSR partnerships connecting corporate\nsupport with social impact'
+          'Scholarship programs making quality\ntraining accessible to all'
       ],
-      btnLabel: 'Visit LUCA: The Leader →',
+      btnLabel: 'Watch the Series →',
+      badge: 'OPEN TO ALL',
+      mockupImg: '/images/luca_mockup.png'
   },
   {
       id: 'martinich-courses',
@@ -40,6 +44,8 @@ const tabsData = [
           'Certification programs for aspiring leaders'
       ],
       btnLabel: 'View Courses →',
+      badge: 'ENROLLING NOW',
+      mockupImg: '/images/lucaweb.webp'
   },
   {
       id: 'martinich-rad',
@@ -52,12 +58,16 @@ const tabsData = [
           'Collaborative projects with academic institutions'
       ],
       btnLabel: 'Explore R&D →',
+      badge: 'LATEST INSIGHTS',
+      mockupImg: '/images/lucaweb2.webp'
   }
 ];
 
 const OurEcosystem = () => {
-  const [activeTab, setActiveTab] = useState('luca-leader');
+  const [activeTab, setActiveTab] = useState('martinich-consulting');
   const activeData = tabsData.find(t => t.id === activeTab);
+  const activeIndex = tabsData.findIndex(t => t.id === activeTab);
+  
   const sectionRef = useRef(null);
   const graphicRef = useRef(null);
   const contentRef = useRef(null);
@@ -121,33 +131,17 @@ const OurEcosystem = () => {
                       <span className="font-serif italic text-black text-[42px] tracking-widest pl-2">ILT</span>
                   </div>
 
-                  {/* Node: Martinich Consulting — Outer Orbit (R=460) */}
+                  {/* Nodes with custom shadow/glow */}
                   <div className="absolute flex items-center justify-center rounded-full bg-[#161616] text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4]"
-                      style={{ 
-                          width: '106px', height: '106px', 
-                          top: '-373px', left: '-373px',
-                          boxShadow: '0 0 30px 15px rgba(255,255,255,0.04)' 
-                      }}>
+                      style={{ width: '106px', height: '106px', top: '-373px', left: '-373px', boxShadow: '0 0 30px 15px rgba(255,255,255,0.04)' }}>
                       <span>Martinich<br />Consulting</span>
                   </div>
-
-                  {/* Node: LUCA The Leader — Mid Orbit (R=320) */}
                   <div className="absolute flex items-center justify-center rounded-full bg-[#161616] text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4]"
-                      style={{ 
-                          width: '100px', height: '100px', 
-                          top: '-50px', left: '-370px',
-                          boxShadow: '0 0 30px 15px rgba(255,255,255,0.04)' 
-                      }}>
+                      style={{ width: '100px', height: '100px', top: '-50px', left: '-370px', boxShadow: '0 0 30px 15px rgba(255,255,255,0.04)' }}>
                       <span>LUCA: The<br />Leader</span>
                   </div>
-
-                  {/* Node: Martinich R&D — Inner Orbit (R=190) */}
                   <div className="absolute flex items-center justify-center rounded-full bg-[#161616] text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4]"
-                      style={{ 
-                          width: '94px', height: '94px', 
-                          top: '120px', left: '-180px',
-                          boxShadow: '0 0 30px 15px rgba(255,255,255,0.03)' 
-                      }}>
+                      style={{ width: '94px', height: '94px', top: '120px', left: '-180px', boxShadow: '0 0 30px 15px rgba(255,255,255,0.03)' }}>
                       <span>Martinich<br />R&D</span>
                   </div>
               </div>
@@ -186,7 +180,7 @@ const OurEcosystem = () => {
                       <div className="absolute bottom-[-40px] left-[-20px] w-[300px] md:w-[400px] h-[200px] md:h-[280px]
                           bg-[#1833ff] opacity-[0.1] blur-[80px] pointer-events-none rounded-full"></div>
 
-                      <div className="flex flex-col lg:flex-row min-h-[380px]">
+                      <div className="flex flex-col lg:flex-row min-h-[420px]">
 
                           {/* LEFT: text */}
                           <div className="w-full lg:w-[42%] flex flex-col justify-center relative z-10 p-8 md:p-12 lg:p-14 lg:pl-16">
@@ -208,7 +202,7 @@ const OurEcosystem = () => {
                                   ))}
                               </ul>
                               <div>
-                                  <button className="bg-[#0055FF] hover:bg-[#0044ee] transition-colors text-white
+                                  <button onClick={() => window.open('#', '_blank')} className="bg-[#0055FF] hover:bg-[#0044ee] transition-colors text-white
                                       text-[12px] font-medium py-[10px] px-6 rounded-md tracking-wide w-full md:w-fit">
                                       {activeData.btnLabel}
                                   </button>
@@ -222,27 +216,38 @@ const OurEcosystem = () => {
                                        boxShadow: '0 32px 80px rgba(0,0,0,0.9), 0 8px 24px rgba(0,0,0,0.6)',
                                    }}>
                                   <div className="relative w-full overflow-hidden rounded-[12px] bg-white aspect-[4/3]">
+                                      
+                                      {/* Floating Badge (Image 1 reference) */}
                                       <div className="absolute top-0 left-0 z-20 flex items-center gap-1.5
                                           bg-[#0055FF] text-white rounded-tl-[12px] rounded-br-[12px]
                                           px-3 py-[7px] text-[7.5px] font-bold tracking-[0.14em] uppercase">
                                           <span className="w-[3px] h-[3px] bg-white rounded-full"></span>
-                                          OPEN TO ALL
+                                          {activeData.badge}
                                       </div>
+                                      
                                       <img
-                                          src="/images/lucaweb2.webp"
-                                          alt="LUCA Dashboard"
+                                          src={activeData.mockupImg}
+                                          alt={activeData.title}
                                           className="w-full h-full object-cover"
                                           style={{ objectPosition: 'top center' }}
-                                          onError={(e) => { e.target.src = '/images/lucaweb.webp'; }}
+                                          onError={(e) => { e.target.src = '/images/lucaweb2.webp'; }}
                                       />
                                   </div>
                               </div>
 
+                              {/* Progress segments (Image 1 & 2 reference) */}
                               <div className="flex items-center w-full gap-2 mt-6">
-                                  <div className="h-[2px] flex-1 bg-[#0055FF] rounded-full"></div>
-                                  {[1,2,3,4].map(i => (
-                                      <div key={i} className="h-[2px] flex-1 bg-[#282828] rounded-full hover:bg-[#3a3a3a] cursor-pointer transition-colors"></div>
-                                  ))}
+                                  {tabsData.map((_, i) => {
+                                      const isPassed = i <= activeIndex;
+                                      return (
+                                          <div 
+                                              key={i} 
+                                              onClick={() => setActiveTab(tabsData[i].id)}
+                                              className={`h-[2px] flex-1 rounded-full cursor-pointer transition-all duration-300
+                                                  ${isPassed ? 'bg-[#0055FF]' : 'bg-[#282828] hover:bg-[#3a3a3a]'}`}
+                                          />
+                                      );
+                                  })}
                               </div>
                           </div>
                       </div>
