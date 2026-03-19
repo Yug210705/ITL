@@ -107,20 +107,20 @@ const VisionOriginSection = () => {
                 <div ref={maskRef} className="relative w-full max-w-5xl h-[350px] md:h-[400px] z-10 flex items-center justify-center">
                     
                     {/* Block 1: The Problem */}
-                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-start text-left lg:translate-x-[-15%] opacity-0 pointer-events-none">
-                        <div className="flex items-center gap-3 mb-5">
+                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-center text-center opacity-0 pointer-events-none">
+                        <div className="flex items-center justify-center gap-3 mb-5">
                             <span className="w-1.5 h-1.5 bg-white inline-block" />
                             <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">THE PROBLEM</span>
                         </div>
                         <h3 className="font-serif text-[32px] md:text-[48px] lg:text-[56px] text-white mb-6 tracking-tight">The Trust Gap</h3>
-                        <p className="font-sans text-white/80 text-[16px] md:text-[19px] leading-relaxed max-w-xl">
+                        <p className="font-sans text-white/80 text-[16px] md:text-[19px] leading-relaxed max-w-xl mx-auto">
                             Leadership development has focused on skills and frameworks, while trust in leaders continues to decline. Organizations optimize performance—but lose people, engagement, and long-term resilience.
                         </p>
                     </div>
 
                     {/* Block 2: The Insight */}
-                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-start text-left lg:translate-x-[-15%] opacity-0 pointer-events-none">
-                        <div className="flex items-center gap-3 mb-5">
+                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-center text-center opacity-0 pointer-events-none">
+                        <div className="flex items-center justify-center gap-3 mb-5">
                             <span className="w-1.5 h-1.5 bg-white inline-block" />
                             <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">THE INSIGHT</span>
                         </div>
@@ -128,19 +128,19 @@ const VisionOriginSection = () => {
                             Trust is the Missing <br />
                             Foundation
                         </h3>
-                        <p className="font-sans text-white/80 text-[16px] md:text-[19px] leading-relaxed max-w-xl">
+                        <p className="font-sans text-white/80 text-[16px] md:text-[19px] leading-relaxed max-w-xl mx-auto">
                             Through years of research and global consulting, one insight became clear: trust isn’t a soft skill—it’s the currency of leadership effectiveness.
                         </p>
                     </div>
 
                     {/* Block 3: The Solution */}
-                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-start text-left lg:translate-x-[-15%] opacity-0 pointer-events-none">
-                        <div className="flex items-center gap-3 mb-5">
+                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-center text-center opacity-0 pointer-events-none">
+                        <div className="flex items-center justify-center gap-3 mb-5">
                             <span className="w-1.5 h-1.5 bg-white inline-block" />
                             <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">THE SOLUTION</span>
                         </div>
                         <h3 className="font-serif text-[32px] md:text-[48px] lg:text-[56px] text-white mb-6 tracking-tight">An Integrated Ecosystem</h3>
-                        <p className="font-sans text-white/80 text-[16px] md:text-[19px] leading-relaxed max-w-xl">
+                        <p className="font-sans text-white/80 text-[16px] md:text-[19px] leading-relaxed max-w-xl mx-auto">
                             Trust cannot be built through training alone. It requires research, development, organizational transformation, and continuous learning—working together.
                         </p>
                     </div>
