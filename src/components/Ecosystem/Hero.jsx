@@ -24,7 +24,7 @@ const Hero = () => {
                 
                 <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-8 w-full flex-grow py-10 md:py-16">
                     
-                    <div className="flex flex-col justify-start text-left hero-reveal">
+                    <div className="flex flex-col justify-start text-left hero-reveal lg:-mt-12">
                         <span className="flex items-center gap-3 font-sans text-[10px] md:text-xs font-semibold tracking-[0.25em] uppercase text-white/80">
                             <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white inline-block"></span>
                             ECOSYSTEM
@@ -36,7 +36,7 @@ const Hero = () => {
                         </h1>
                     </div>
 
-                    <div className="flex flex-col justify-end lg:pb-32 hero-reveal">
+                    <div className="flex flex-col justify-end lg:pb-24 lg:translate-y-12 hero-reveal">
                         <p className="font-sans text-base leading-relaxed text-white max-w-[560px] lg:text-right lg:ml-auto">
                             The Institute of Trusted Leadership operates through an integrated ecosystem of specialized divisions, each addressing different aspects of leadership development and organizational transformation.
                         </p>
