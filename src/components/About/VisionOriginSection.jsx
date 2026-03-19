@@ -82,10 +82,10 @@ const VisionOriginSection = () => {
                 </svg>
             </div>
 
-            <section ref={triggerRef} className="relative h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 overflow-hidden pt-12">
+            <section ref={triggerRef} className="relative h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-16 overflow-hidden pt-12">
                 
                 {/* Header Section (Pinned) */}
-                <div ref={headerRef} className="w-full max-w-4xl mx-auto flex flex-col items-center z-20 mb-10">
+                <div ref={headerRef} className="w-full max-w-5xl mx-auto flex flex-col items-center z-20 mb-10">
                     <div className="flex items-center justify-center gap-3 mb-6">
                         <span className="w-2 md:w-2.5 h-2 md:h-2.5 bg-white inline-block" />
                         <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase">
@@ -104,10 +104,10 @@ const VisionOriginSection = () => {
                 </div>
 
                 {/* Sequential Content Blocks */}
-                <div ref={maskRef} className="relative w-full max-w-5xl h-[350px] md:h-[400px] z-10 flex items-center lg:pl-32">
+                <div ref={maskRef} className="relative w-full max-w-5xl h-[350px] md:h-[400px] z-10 flex items-center justify-center">
                     
                     {/* Block 1: The Problem */}
-                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto lg:pl-32 flex flex-col items-start text-left opacity-0 pointer-events-none">
+                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-start text-left lg:translate-x-[-15%] opacity-0 pointer-events-none">
                         <div className="flex items-center gap-3 mb-5">
                             <span className="w-1.5 h-1.5 bg-white inline-block" />
                             <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">THE PROBLEM</span>
@@ -119,7 +119,7 @@ const VisionOriginSection = () => {
                     </div>
 
                     {/* Block 2: The Insight */}
-                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto lg:pl-32 flex flex-col items-start text-left opacity-0 pointer-events-none">
+                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-start text-left lg:translate-x-[-15%] opacity-0 pointer-events-none">
                         <div className="flex items-center gap-3 mb-5">
                             <span className="w-1.5 h-1.5 bg-white inline-block" />
                             <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">THE INSIGHT</span>
@@ -134,7 +134,7 @@ const VisionOriginSection = () => {
                     </div>
 
                     {/* Block 3: The Solution */}
-                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto lg:pl-32 flex flex-col items-start text-left opacity-0 pointer-events-none">
+                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-start text-left lg:translate-x-[-15%] opacity-0 pointer-events-none">
                         <div className="flex items-center gap-3 mb-5">
                             <span className="w-1.5 h-1.5 bg-white inline-block" />
                             <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">THE SOLUTION</span>
