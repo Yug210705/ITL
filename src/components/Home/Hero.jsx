@@ -5,7 +5,7 @@ import { ArrowDown } from 'lucide-react';
 const Hero = () => {
     return (
         <section className="relative w-full h-[85vh] md:h-screen flex flex-col pt-32 px-6 md:px-12 lg:px-20 bg-transparent">
-            <div className="container mx-auto flex flex-col flex-grow relative z-10 w-full max-w-[1400px]">
+            <div className="mx-auto flex flex-col flex-grow relative z-10 w-full max-w-[1400px]">
                 <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-8 w-full flex-grow py-12 md:py-20">
                     <div className="flex flex-col justify-start lg:-mt-14">
                         <span className="flex items-center gap-3 font-sans text-[9px] md:text-[10px] font-bold tracking-[0.25em] uppercase text-white/50">

@@ -19,8 +19,8 @@ const Hero = () => {
     }, []);
 
     return (
-        <section ref={heroRef} className="relative w-full min-h-[90vh] md:min-h-screen flex flex-col pt-24 md:pt-32 px-6 md:px-0 bg-transparent">
-            <div className="container mx-auto flex flex-col flex-grow relative z-10 w-full max-w-[1440px]">
+        <section ref={heroRef} className="relative w-full min-h-[90vh] md:min-h-screen flex flex-col pt-24 md:pt-32 px-6 md:px-12 lg:px-20 bg-transparent">
+            <div className="mx-auto flex flex-col flex-grow relative z-10 w-full max-w-[1400px]">
                 
                 <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-8 w-full flex-grow py-10 md:py-16">
                     
