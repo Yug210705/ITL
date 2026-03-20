@@ -72,20 +72,20 @@ const InfoSlider = () => {
                         <filter id="filter0_f_94_3118" x="340.439" y="280" width="1890.23" height="816.801" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                             <feFlood flood-opacity="0" result="BackgroundImageFix" />
                             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_94_3118" />
+                            <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_94_3118" />
                         </filter>
                         <filter id="filter1_f_94_3118" x="0" y="0" width="2479.67" height="1391" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                             <feFlood flood-opacity="0" result="BackgroundImageFix" />
                             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                            <feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_94_3118" />
+                            <feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_94_3118" />
                         </filter>
                     </defs>
                 </svg>
             </div>
             <div className="relative z-10 w-full h-full flex flex-col pt-2 md:pt-4 px-4 md:px-0">
-                <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 w-full border-b border-[#FFFFFF14] lg:overflow-hidden">
+                <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 w-full border-b border-[#FFFFFF14] overflow-y-auto lg:overflow-hidden">
                     {/* Top Left / Mobile 1 */}
-                    <div className={`border-b lg:border-r border-[#FFFFFF14] p-6 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 1 ? "bg-[#FFFFFF0F]" : "bg-transparent"} ${slides[activeSlide].tl.type === 'empty' ? 'hidden lg:flex' : 'flex'}`}>
+                    <div className={`border-b lg:border-r border-[#FFFFFF14] p-6 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 1 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
                         <div className="animate-fadeInKey" key={`tl-${activeSlide}`}>
                             <div className="flex items-center gap-2 mb-4 md:mb-6">
                                 <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-white inline-block"></span>
@@ -95,7 +95,7 @@ const InfoSlider = () => {
                         </div>
                     </div>
                     {/* Top Right / Mobile 2 */}
-                    <div className={`border-b border-[#FFFFFF14] flex flex-col justify-center relative overflow-hidden transition-all duration-200 ${activeSlide === 0 || activeSlide === 2 ? "bg-[#FFFFFF0F]" : "bg-transparent"} ${slides[activeSlide].tr.type === 'empty' ? 'hidden lg:flex' : 'flex'}`}>
+                    <div className={`border-b border-[#FFFFFF14] flex flex-col justify-center relative overflow-hidden transition-all duration-200 ${activeSlide === 0 || activeSlide === 2 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
                         <div className="w-full h-full animate-fadeInKey flex flex-col justify-center p-6 md:p-0" key={`tr-${activeSlide}`}>
                             {slides[activeSlide].tr.type === 'image' && (
                                 <img src={slides[activeSlide].tr.src} alt={slides[activeSlide].tr.alt} className="w-full h-48 md:h-full object-contain" />
@@ -110,7 +110,7 @@ const InfoSlider = () => {
                         </div>
                     </div>
                     {/* Bottom Left / Mobile 3 */}
-                    <div className={`border-b lg:border-b-0 lg:border-r border-[#FFFFFF14] p-6 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 0 || activeSlide === 2 ? "bg-[#FFFFFF0F]" : "bg-transparent"} ${slides[activeSlide].bl.type === 'empty' ? 'hidden lg:flex' : 'flex'}`}>
+                    <div className={`border-b lg:border-b-0 lg:border-r border-[#FFFFFF14] p-6 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 0 || activeSlide === 2 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
                         <div className="w-full h-full animate-fadeInKey flex flex-col justify-center" key={`bl-${activeSlide}`}>
                             {slides[activeSlide].bl.isText && (
                                 <p className="font-sans font-light text-[15px] md:text-lg text-white/80 leading-relaxed whitespace-pre-line lg:overflow-y-auto max-h-full">
@@ -127,7 +127,7 @@ const InfoSlider = () => {
                         </div>
                     </div>
                     {/* Bottom Right / Mobile 4 */}
-                    <div className={`p-6 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 1 ? "bg-[#FFFFFF0F]" : "bg-transparent"} ${slides[activeSlide].br.type === 'empty' ? 'hidden lg:flex' : 'flex'}`}>
+                    <div className={`p-6 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 1 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
                         <div className="w-full h-full animate-fadeInKey flex flex-col justify-start" key={`br-${activeSlide}`}>
                             {slides[activeSlide].br.isText && (
                                 <p className="font-sans font-light text-[15px] md:text-lg text-white/80 leading-relaxed whitespace-pre-line lg:overflow-y-auto max-h-full">

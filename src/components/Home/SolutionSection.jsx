@@ -108,7 +108,7 @@ const SolutionSection = () => {
 
                 <div ref={card1Ref} className="flex flex-col items-center justify-end h-full relative z-10">
                     <div className="relative flex flex-col items-start text-start max-w-xs md:max-w-3xs mb-4">
-                        <div className="absolute -top-10 md:-top-1/2 left-0 md:-left-1/4 font-serif text-5xl md:text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white/20 to-transparent from-50% to-100% z-[-1]">
+                        <div className="absolute -top-1/4 md:-top-1/2 left-0 md:-left-1/4 font-serif text-5xl md:text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent from-50% to-100% ">
                             {cards[0].number}
                         </div>
                         <h3 className="text-2xl md:text-3xl font-serif text-white mb-2 tracking-wide">{cards[0].title}</h3>
@@ -118,7 +118,7 @@ const SolutionSection = () => {
                 </div>
                 <div ref={card2Ref} className="flex flex-col items-center justify-start text-start h-full relative z-10">
                     <div className="relative flex flex-col items-start text-start max-w-xs md:max-w-3xs mt-0 md:mt-10 mb-6">
-                        <div className="absolute -top-10 md:-top-1/2 left-0 md:-left-1/4 font-serif text-5xl md:text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white/20 to-transparent from-50% to-100% z-[-1]">
+                        <div className="absolute -top-1/4 md:-top-1/2 left-0 md:-left-1/4 font-serif text-5xl md:text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent from-50% to-100% ">
                             {cards[1].number}
                         </div>
                         <h3 className="text-2xl md:text-3xl font-serif text-white mb-2 tracking-wide">{cards[1].title}</h3>
@@ -128,7 +128,7 @@ const SolutionSection = () => {
                 </div>
                 <div ref={card3Ref} className="flex flex-col items-center justify-end h-full relative z-10">
                     <div className="relative flex flex-col items-start text-start max-w-xs md:max-w-3xs mb-4">
-                        <div className="absolute -top-10 md:-top-1/2 left-0 md:-left-1/4 font-serif text-5xl md:text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white/20 to-transparent from-50% to-100% z-[-1]">
+                        <div className="absolute -top-1/4 md:-top-1/2 left-0 md:-left-1/4 font-serif text-5xl md:text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent from-50% to-100% ">
                             {cards[2].number}
                         </div>
                         <h3 className="text-2xl md:text-3xl font-serif text-white mb-2 tracking-wide">{cards[2].title}</h3>
