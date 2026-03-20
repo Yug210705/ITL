@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useLayoutEffect } from 'react';
 import { Lightbulb, Maximize } from 'lucide-react';
 
 const JourneySection = () => {
@@ -6,6 +6,14 @@ const JourneySection = () => {
     const isDown = useRef(false);
     const startX = useRef(0);
     const scrollLeft = useRef(0);
+    const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
+
+    useLayoutEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const journeyData = [
         {
@@ -101,8 +109,50 @@ const JourneySection = () => {
         scrollRef.current.scrollLeft = scrollLeft.current - walk;
     };
 
+    if (isMobile) {
+        return (
+            <section className="relative w-full text-white bg-transparent py-16 px-6 overflow-x-hidden">
+                <div className="flex items-center justify-center gap-3 mb-6">
+                    <span className="w-1.5 h-1.5 bg-white inline-block" />
+                    <span className="font-sans text-[10px] font-bold tracking-[0.2em] uppercase">OUR JOURNEY</span>
+                </div>
+                <h2 className="font-serif text-[32px] text-center tracking-wide mb-16">
+                    From Vision to Reality
+                </h2>
+
+                <div className="relative border-l border-white/20 ml-[4rem] pl-6 space-y-12 pb-12">
+                    {/* Vertical Start Label */}
+                    <div className="absolute top-0 -left-[14px] bg-[#0A0A0A] py-2 flex flex-col items-center">
+                        <span className="w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_8px_white]" />
+                    </div>
+
+                    {journeyData.map((item, index) => (
+                        <div key={index} className="relative w-full">
+                            {/* Year Dot */}
+                            <div className="absolute -left-[29px] top-6 w-3 h-3 bg-[#0A0A0A] flex items-center justify-center">
+                                <span className="w-1.5 h-1.5 rounded-full bg-white relative z-10 shadow-[0_0_4px_white]" />
+                            </div>
+                            <span className="absolute -left-[4.5rem] top-5 text-sm font-light tracking-wider opacity-60">
+                                {item.year}
+                            </span>
+
+                            {/* Card Content */}
+                            <div className="bg-[#FFFFFF08] border border-[#FFFFFF14] p-6 rounded-2xl w-full">
+                                <span className="w-12 h-12 flex items-center justify-center rounded-full bg-[#FFFFFF14] border border-[#FFFFFF24] mb-4">
+                                    {item.icon}
+                                </span>
+                                <h3 className="font-serif text-xl sm:text-2xl mb-3 tracking-wide">{item.title}</h3>
+                                {item.content}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        );
+    }
+
     return (
-        <section className="relative w-full min-h-screen flex flex-col py-24 overflow-x-hidden select-none">
+        <section className="relative w-full min-h-[60vh] md:min-h-screen flex flex-col py-16 md:py-24 overflow-x-hidden select-none">
             <div className='absolute h-3/4 w-full bottom-0 left-0 z-10 bg-linear-to-t from-[#0A0A0A] to-transparent'></div>
 
             <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center mb-4 md:mb-8 shrink-0 z-20 text-center">
@@ -174,7 +224,7 @@ const JourneySection = () => {
                 </div>
             </div>
 
-            <style jsx>{`
+            <style>{`
                 .hide-scrollbar::-webkit-scrollbar {
                     display: none;
                 }

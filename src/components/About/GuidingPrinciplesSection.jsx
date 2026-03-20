@@ -39,7 +39,7 @@ const GuidingPrinciplesSection = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative w-full min-h-screen flex items-center justify-center py-24">
+        <section ref={containerRef} className="relative w-full min-h-[30vh] md:min-h-screen flex items-center justify-center pb-12 pt-0 md:py-24">
             {/* svgsssssssssssssss don't change broo, this gonaaa spoill everyyythingggg */}
             <div className='absolute h-full w-full -top-10 left-0 z-[-1]'>
                 <svg width="100%" height="2098" viewBox="0 0 1280 2098" fill="none" xmlns="http://www.w3.org/2000/svg">

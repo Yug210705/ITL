@@ -19,10 +19,10 @@ const Hero = () => {
     }, []);
 
     return (
-        <section ref={heroRef} className="relative w-full min-h-[90vh] md:min-h-screen flex flex-col pt-24 md:pt-32 px-6 md:px-12 lg:px-20 bg-transparent">
+        <section ref={heroRef} className="relative w-full min-h-[65vh] md:min-h-screen flex flex-col pt-28 pb-12 md:pb-0 md:pt-32 px-6 md:px-12 lg:px-20 bg-transparent">
             <div className="mx-auto flex flex-col flex-grow relative z-10 w-full max-w-[1400px]">
                 
-                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-8 w-full flex-grow py-10 md:py-16">
+                <div className="flex flex-col lg:grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-8 w-full flex-grow py-8 md:py-16 justify-center lg:justify-start">
                     
                     <div className="flex flex-col justify-start text-left hero-reveal lg:-mt-12">
                         <span className="flex items-center gap-3 font-sans text-[10px] md:text-xs font-semibold tracking-[0.25em] uppercase text-white/80">
@@ -36,7 +36,7 @@ const Hero = () => {
                         </h1>
                     </div>
 
-                    <div className="flex flex-col justify-end lg:pb-24 lg:translate-y-12 hero-reveal">
+                    <div className="flex flex-col justify-start lg:justify-end lg:pb-24 lg:translate-y-12 hero-reveal mt-6 lg:mt-0">
                         <p className="font-sans text-base leading-relaxed text-white max-w-[560px] lg:text-right lg:ml-auto">
                             The Institute of Trusted Leadership operates through an integrated ecosystem of specialized divisions, each addressing different aspects of leadership development and organizational transformation.
                         </p>
@@ -44,7 +44,7 @@ const Hero = () => {
 
                 </div>
 
-                <div className="absolute bottom-10 left-0 w-full border-t-[0.5px] border-white/20 pt-6 flex justify-between items-center text-white/70 font-sans text-[10px] md:text-xs tracking-[0.1em] uppercase hero-reveal">
+                <div className="relative md:absolute md:bottom-10 md:left-0 w-full border-t-[0.5px] border-white/20 pt-5 pb-8 md:pb-0 mt-4 md:mt-0 flex justify-between items-center text-white/70 font-sans text-[10px] md:text-xs tracking-[0.1em] uppercase hero-reveal">
                     <span>Scroll to Discover</span>
                     <div className="animate-bounce">
                         <svg width="12" height="14" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">

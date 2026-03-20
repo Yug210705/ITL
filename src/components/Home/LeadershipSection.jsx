@@ -68,7 +68,7 @@ const LeadershipSection = () => {
         },
         {
             title: "Global Partnerships",
-            description: "Strengthen the means of implementation and revitalize the global partnership for sustain-able development.",
+            description: "Strengthen the means of implementation and revitalize the global partnership for sustainable development.",
             icon: (
                 <div className="flex flex-col gap-1">
                     <div className="flex gap-1">
@@ -85,7 +85,7 @@ const LeadershipSection = () => {
     ];
 
     return (
-        <section ref={containerRef} className="relative w-full py-24 px-4 md:px-8 flex flex-col items-center">
+        <section ref={containerRef} className="relative w-full py-12 md:py-24 px-4 md:px-8 flex flex-col items-center">
             {/* svgsssssssssssssss don't change broo, this gonaaa spoill everyyythingggg */}
             <div className='absolute h-full w-full bottom-1/2 left-0 z-[-1]'>
                 <svg width="100%" height="1500" className="min-h-[190vh]" viewBox="0 0 1280 1607" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,8 +109,9 @@ const LeadershipSection = () => {
                     </defs>
                 </svg>
             </div>
+
             {/* Header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-12 md:mb-16 px-2">
                 <div className="header-animate flex items-center justify-center gap-3 mb-6">
                     <span className="w-2.5 h-2.5 bg-white inline-block" />
                     <span className="text-white font-sans text-xs font-bold tracking-[0.2em] uppercase">
@@ -121,12 +122,14 @@ const LeadershipSection = () => {
                     Leadership for Good
                 </h2>
             </div>
+
             <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row gap-6">
-                <div className="w-full lg:w-[65%] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 px-4 md:px-0">
+                {/* Cards grid */}
+                <div className="w-full lg:w-[65%] grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {impactCards.map((card, index) => (
                         <div
                             key={index}
-                            className="impact-card bg-[#0A0A0AA3] p-6 md:p-8 rounded-2xl flex flex-col gap-6 md:gap-8 transition-colors duration-300 group min-h-[200px] md:min-h-[250px]"
+                            className="impact-card bg-[#0A0A0AA3] p-6 md:p-8 rounded-2xl flex flex-col gap-5 md:gap-8 transition-colors duration-300 group min-h-[200px]"
                         >
                             <div className="w-10 h-10 flex items-center justify-start opacity-70 group-hover:opacity-100 transition-opacity">
                                 {card.icon}
@@ -140,7 +143,9 @@ const LeadershipSection = () => {
                         </div>
                     ))}
                 </div>
-                <div className="impact-image w-full lg:w-[35%] bg-[#F0F4F8] rounded-2xl overflow-hidden relative min-h-[300px] md:min-h-[500px] lg:min-h-auto px-4 lg:px-0 mx-4 lg:mx-0">
+
+                {/* Image */}
+                <div className="impact-image w-full lg:w-[35%] bg-[#F0F4F8] rounded-2xl overflow-hidden relative min-h-[280px] md:min-h-[400px] lg:min-h-0">
                     <img
                         src="/images/lucaweb2.webp"
                         alt="Luca Project Showcase"

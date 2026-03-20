@@ -26,7 +26,7 @@ const JoinMovementSection = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative w-full py-32 px-4 md:px-8 flex flex-col items-center justify-center text-center">
+        <section ref={containerRef} className="relative w-full py-16 md:py-32 px-4 md:px-8 flex flex-col items-center justify-center text-center">
             <div className="absolute inset-0 bg-linear-to-b from-[#00264D] to-transparent pointer-events-none" />
 
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">

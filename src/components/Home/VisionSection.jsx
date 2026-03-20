@@ -61,7 +61,7 @@ const VisionSection = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="w-full bg-linear-to-b from-[#00264D] to-[#0A0A0A00] py-24 px-4 md:px-8 flex flex-col items-center">
+        <section ref={containerRef} className="w-full bg-transparent py-12 md:py-24 px-4 md:px-8 flex flex-col items-center">
             <div className="text-center mb-16 max-w-4xl">
                 <div className="flex items-center justify-center gap-3 mb-6">
                     <span className="w-2.5 h-2.5 bg-white inline-block" />

@@ -30,7 +30,7 @@ const FounderSection = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative w-full py-24 px-4 md:px-8 flex justify-center">
+        <section ref={containerRef} className="relative w-full py-12 md:py-24 px-4 md:px-8 flex justify-center">
 
             <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-20 items-center">
                 <div className="founder-image relative rounded-2xl overflow-hidden w-full md:w-[38%] aspect-square md:aspect-auto">

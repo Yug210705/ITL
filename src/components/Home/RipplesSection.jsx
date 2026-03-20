@@ -45,7 +45,7 @@ const RipplesSection = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative w-full py-24 px-4 md:px-8 flex flex-col items-center overflow-hidden">
+        <section ref={containerRef} className="relative w-full py-12 md:py-24 px-4 md:px-8 flex flex-col items-center overflow-hidden">
             <div className="text-start mb-20 max-w-5xl">
                 <div className="ripple-header flex items-center justify-start gap-3 mb-6">
                     <span className="w-2.5 h-2.5 bg-[#D9D9D9] inline-block" />
@@ -99,7 +99,7 @@ const RipplesSection = () => {
 
                 </div>
             </div>
-            <div className="black-gradient-overlay absolute z-10 bottom-0 left-0 w-full h-[50%] bg-linear-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
+            <div className="black-gradient-overlay hidden md:block absolute z-10 bottom-0 left-0 w-full h-[50%] bg-linear-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
 
         </section>
     );

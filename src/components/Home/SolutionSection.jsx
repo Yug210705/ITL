@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -13,6 +13,14 @@ const SolutionSection = () => {
     const card1Ref = useRef(null);
     const card2Ref = useRef(null);
     const card3Ref = useRef(null);
+    const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
+
+    useLayoutEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const cards = [
         {
@@ -36,13 +44,38 @@ const SolutionSection = () => {
     ];
 
     useGSAP(() => {
+        if (isMobile) {
+            // Simple fade-in on mobile, no pinning
+            if (cardsWrapperRef.current) {
+                gsap.set(cardsWrapperRef.current, { autoAlpha: 1 });
+            }
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+            tl.fromTo(headerRef.current,
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.6 }
+            );
+            tl.fromTo([card1Ref.current, card2Ref.current, card3Ref.current],
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: "power2.out" },
+                "-=0.3"
+            );
+            return;
+        }
+
+        // Desktop: pinned scroll animation
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
-                pin: window.innerWidth >= 768,
+                pin: true,
                 scrub: 1,
                 start: "top top",
-                end: window.innerWidth >= 768 ? "+=3000" : "+=500",
+                end: "+=3000",
             }
         });
         tl.to(headerRef.current, {
@@ -69,8 +102,47 @@ const SolutionSection = () => {
                 { x: "0%", opacity: 1, duration: 4, ease: "power2.out" }
             );
 
-    }, { scope: containerRef });
+    }, { scope: containerRef, dependencies: [isMobile] });
 
+    // Mobile layout: simple vertical card list
+    if (isMobile) {
+        return (
+            <section ref={containerRef} className="relative w-full overflow-hidden flex flex-col text-white py-16 px-4">
+                {/* Header */}
+                <div ref={headerRef} className="text-center mb-12 px-2">
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                        <span className="w-2 h-2 bg-[#D9D9D9] inline-block" />
+                        <span className="text-[#FFFFFF] font-sans text-xs font-bold tracking-[0.2em] uppercase">THE SOLUTION</span>
+                    </div>
+                    <h2 className="font-serif text-4xl text-white mb-4">
+                        <span className="italic font-light text-[#FFFFFF6B] mr-2">This is</span>
+                        Why We Exist
+                    </h2>
+                    <p className="font-sans text-[#FFFFFF6B] leading-relaxed text-sm">
+                        Trust transforms everything: engagement, innovation, performance, & culture. The Institute of Trusted Leadership scales this impact through research-backed methods, turning trusted leadership into the global standard.
+                    </p>
+                </div>
+
+                {/* Cards */}
+                <div ref={cardsWrapperRef} className="flex flex-col gap-4 w-full max-w-lg mx-auto">
+                    {cards.map((card, index) => {
+                        const cardRefs = [card1Ref, card2Ref, card3Ref];
+                        return (
+                            <div key={card.id} ref={cardRefs[index]} className="relative bg-[#FFFFFF0A] border border-[#FFFFFF14] rounded-xl p-6">
+                                <div className="font-serif text-6xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white/30 to-transparent from-50% mb-4">
+                                    {card.number}
+                                </div>
+                                <h3 className="text-xl font-serif text-white mb-2 tracking-wide">{card.title}</h3>
+                                <p className="text-[#FFFFFF52] font-sans text-sm leading-relaxed">{card.desc}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </section>
+        );
+    }
+
+    // Desktop layout (original)
     return (
         <section ref={containerRef} className="relative w-full h-screen overflow-hidden flex flex-col justify-center text-white">
             <div className="absolute w-[30%] h-full top-0 right-0 bg-gradient-to-l from-[#0A0A0A] to-transparent z-50 pointer-events-none"></div>
@@ -92,7 +164,7 @@ const SolutionSection = () => {
             </div>
             <div
                 ref={cardsWrapperRef}
-                className="relative w-full max-w-7xl mx-auto min-h-[60vh] md:h-[65vh] z-10 flex flex-col md:grid md:grid-cols-3 gap-8 md:gap-4 px-6 md:px-0 opacity-0 invisible"
+                className="relative w-full max-w-7xl mx-auto h-[65vh] z-10 grid grid-cols-3 gap-4 px-0 opacity-0 invisible"
             >
                 <div
                     ref={baseLineRef}
@@ -107,36 +179,35 @@ const SolutionSection = () => {
                 </div>
 
                 <div ref={card1Ref} className="flex flex-col items-center justify-end h-full relative z-10">
-                    <div className="relative flex flex-col items-start text-start max-w-xs md:max-w-3xs mb-4">
-                        <div className="absolute -top-1/2 -left-1/4 font-serif text-7xl md:text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent from-50% to-100% ">
+                    <div className="relative flex flex-col items-start text-start max-w-3xs mb-4">
+                        <div className="absolute -top-1/2 -left-1/4 font-serif text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent from-50% to-100%">
                             {cards[0].number}
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-serif text-white mb-2 tracking-wide">{cards[0].title}</h3>
-                        <p className="text-[#FFFFFF52] font-sans text-sm md:text-base">{cards[0].desc}</p>
+                        <h3 className="text-3xl font-serif text-white mb-2 tracking-wide">{cards[0].title}</h3>
+                        <p className="text-[#FFFFFF52] font-sans text-base">{cards[0].desc}</p>
                     </div>
-                    <div className="hidden md:block w-1 h-32 bg-gradient-to-b from-transparent to-white" />
+                    <div className="w-1 h-32 bg-gradient-to-b from-transparent to-white" />
                 </div>
                 <div ref={card2Ref} className="flex flex-col items-center justify-start text-start h-full relative z-10">
-                    <div className="relative flex flex-col items-start text-start max-w-xs md:max-w-3xs mt-0 md:mt-10 mb-6">
-                        <div className="absolute -top-1/2 -left-1/4 font-serif text-7xl md:text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent from-50% to-100% ">
+                    <div className="relative flex flex-col items-start text-start max-w-3xs mt-10 mb-6">
+                        <div className="absolute -top-1/2 -left-1/4 font-serif text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent from-50% to-100%">
                             {cards[1].number}
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-serif text-white mb-2 tracking-wide">{cards[1].title}</h3>
-                        <p className="text-[#FFFFFF52] font-sans text-sm md:text-base">{cards[1].desc}</p>
+                        <h3 className="text-3xl font-serif text-white mb-2 tracking-wide">{cards[1].title}</h3>
+                        <p className="text-[#FFFFFF52] font-sans text-base">{cards[1].desc}</p>
                     </div>
-                    <div className="hidden md:block w-1 h-42 flex-1 bg-gradient-to-b from-transparent to-white" />
+                    <div className="w-1 h-42 flex-1 bg-gradient-to-b from-transparent to-white" />
                 </div>
                 <div ref={card3Ref} className="flex flex-col items-center justify-end h-full relative z-10">
-                    <div className="relative flex flex-col items-start text-start max-w-xs md:max-w-3xs mb-4">
-                        <div className="absolute -top-1/2 -left-1/4 font-serif text-7xl md:text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent from-50% to-100% ">
+                    <div className="relative flex flex-col items-start text-start max-w-3xs mb-4">
+                        <div className="absolute -top-1/2 -left-1/4 font-serif text-9xl leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent from-50% to-100%">
                             {cards[2].number}
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-serif text-white mb-2 tracking-wide">{cards[2].title}</h3>
-                        <p className="text-[#FFFFFF52] font-sans text-sm md:text-base">{cards[2].desc}</p>
+                        <h3 className="text-3xl font-serif text-white mb-2 tracking-wide">{cards[2].title}</h3>
+                        <p className="text-[#FFFFFF52] font-sans text-base">{cards[2].desc}</p>
                     </div>
-                    <div className="hidden md:block w-1 h-32 bg-gradient-to-b from-transparent to-white" />
+                    <div className="w-1 h-32 bg-gradient-to-b from-transparent to-white" />
                 </div>
-
             </div>
         </section>
     );

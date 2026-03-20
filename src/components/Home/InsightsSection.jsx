@@ -82,8 +82,8 @@ const InsightsSection = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative w-full py-24 px-4 md:px-8 flex flex-col items-center">
-            <div className='absolute bottom-0 left-0 h-[60%] w-full z-10 bg-linear-to-t from-[#00264D] to-transparent '></div>
+        <section ref={containerRef} className="relative w-full py-12 md:py-24 px-4 md:px-8 flex flex-col items-center">
+            <div className='hidden md:block absolute bottom-0 left-0 h-[60%] w-full z-10 bg-linear-to-t from-[#00264D] to-transparent '></div>
             <div className="w-full max-w-7xl mb-12 -z-10">
                 <div className="insight-header flex items-center gap-3 mb-6">
                     <span className="w-2.5 h-2.5 bg-[#52525266] inline-block" />
@@ -143,8 +143,13 @@ const InsightsSection = () => {
                         </div>
                     ))}
                 </div>
-                <div className="absolute bottom-0 left-0 w-full h-[400px] flex items-end justify-center pb-10 cursor-pointer">
+                <div className="hidden md:flex absolute bottom-0 left-0 w-full h-[400px] items-end justify-center pb-10 cursor-pointer">
                     <button className="pointer-events-auto bg-[#006AFF] text-white z-10 font-sans py-4 px-6">
+                        Explore All
+                    </button>
+                </div>
+                <div className="flex md:hidden justify-center mt-8 pb-4">
+                    <button className="bg-[#006AFF] text-white font-sans py-4 px-8">
                         Explore All
                     </button>
                 </div>
