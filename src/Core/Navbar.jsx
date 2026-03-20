@@ -15,7 +15,7 @@ const Navbar = () => {
                     <span className="font-sans italic font-bold text-2xl md:text-3xl tracking-wide group-hover:opacity-90 transition-opacity">
                         I.T.L
                     </span>
-                    <span className="font-sans text-[9px] md:text-xs leading-tight text-white border-l border-white/30 pl-2 md:pl-3 uppercase tracking-wide max-w-[120px] md:max-w-none">
+                    <span className="font-sans text-[8px] min-[350px]:text-[9px] md:text-xs leading-tight text-white border-l border-white/30 pl-2 md:pl-3 uppercase tracking-wide max-w-[80px] min-[350px]:max-w-[120px] md:max-w-none">
                         Institute for <br />
                         Trusted Leadership
                     </span>
