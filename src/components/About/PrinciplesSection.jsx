@@ -25,8 +25,8 @@ const PrinciplesSection = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative w-full h-screen flex items-center justify-center px-4">
-            <h2 className="principles-text font-serif text-4xl md:text-6xl lg:text-7xl text-white text-center leading-tight max-w-5xl">
+        <section ref={containerRef} className="relative w-full min-h-[60vh] md:h-screen flex items-center justify-center px-6 py-20 md:py-0">
+            <h2 className="principles-text font-serif text-[30px] sm:text-[36px] md:text-6xl lg:text-7xl text-white text-center leading-tight max-w-5xl">
                 The Principles That Shape <br className="hidden md:block" />
                 Everything We Do
             </h2>

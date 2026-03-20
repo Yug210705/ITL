@@ -4,28 +4,28 @@ import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative w-full h-[85vh] md:h-screen flex flex-col pt-32 px-6 md:px-12 lg:px-20 bg-transparent">
+        <section className="relative w-full min-h-[90vh] md:h-screen flex flex-col pt-24 md:pt-32 px-4 md:px-12 lg:px-20 bg-transparent">
             <div className="mx-auto flex flex-col flex-grow relative z-10 w-full max-w-[1400px]">
-                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-8 w-full flex-grow py-12 md:py-20">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-4 md:gap-10 lg:gap-8 w-full flex-grow py-8 md:py-20">
                     <div className="flex flex-col justify-start lg:-mt-14">
-                        <span className="flex items-center gap-3 font-sans text-[9px] md:text-[10px] font-bold tracking-[0.25em] uppercase text-white/50">
-                            <span className="w-1.5 h-1.5 bg-white inline-block"></span>
+                        <span className="flex items-center gap-2 md:gap-3 font-sans text-[8px] md:text-[10px] font-bold tracking-[0.25em] uppercase text-white/50">
+                            <span className="w-1 md:w-1.5 h-1 md:h-1.5 bg-white inline-block"></span>
                             BUILT ON SOLID GROUND
                         </span>
 
-                        <h1 className="font-serif text-[38px] md:text-[48px] lg:text-[56px] xl:text-[62px] leading-[1.1] text-white mt-4 md:mt-6 tracking-tight">
+                        <h1 className="font-serif text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[62px] leading-[1.1] text-white mt-4 md:mt-6 tracking-tight">
                             Building Leaders – <br />
                             <span className="italic text-white/30 font-serif lowercase">the</span> World Can Trust.
                         </h1>
                     </div>
                     <div className="flex flex-col justify-end lg:pb-24 lg:translate-y-12">
-                        <p className="font-sans text-[15px] md:text-[16px] leading-[1.65] text-white/60 max-w-[420px] lg:text-right lg:ml-auto">
+                        <p className="font-sans text-[14px] md:text-[16px] leading-[1.65] text-white/60 max-w-[420px] lg:text-right lg:ml-auto">
                             Where purpose meets people. Where organizations transform through trusted leadership, continuous learning, & human responsibility.
                         </p>
                     </div>
 
                 </div>
-                <div className="absolute bottom-10 left-0 w-full border-t-[0.5px] border-white/10 pt-6 flex justify-between items-center text-white/40 font-sans text-[9px] md:text-[10px] tracking-[0.15em] uppercase">
+                <div className="relative md:absolute bottom-8 md:bottom-10 left-0 w-full border-t-[0.5px] border-white/10 pt-6 mt-8 md:mt-0 flex justify-between items-center text-white/40 font-sans text-[9px] md:text-[10px] tracking-[0.15em] uppercase">
                     <span className="flex items-center gap-2">SCROLL TO DISCOVER</span>
                     <div className="animate-bounce">
                         <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">

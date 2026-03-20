@@ -85,20 +85,20 @@ const VisionOriginSection = () => {
             <section ref={triggerRef} className="relative h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-16 overflow-hidden pt-12">
                 
                 {/* Header Section (Pinned) */}
-                <div ref={headerRef} className="w-full max-w-5xl mx-auto flex flex-col items-center z-20 mb-10">
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                        <span className="w-2 md:w-2.5 h-2 md:h-2.5 bg-white inline-block" />
-                        <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase">
+                <div ref={headerRef} className="w-full max-w-5xl mx-auto flex flex-col items-center z-20 mb-6 md:mb-10">
+                    <div className="flex items-center justify-center gap-3 mb-4 md:mb-6">
+                        <span className="w-1.5 md:w-2.5 h-1.5 md:h-2.5 bg-white inline-block" />
+                        <span className="text-white font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase">
                             WHERE WE BEGAN
                         </span>
                     </div>
 
-                    <h2 className="font-serif text-[38px] md:text-[60px] lg:text-[72px] leading-[1.05] mb-8 text-center text-white tracking-tight">
+                    <h2 className="font-serif text-[30px] sm:text-[38px] md:text-[60px] lg:text-[72px] leading-[1.1] mb-6 md:mb-8 text-center text-white tracking-tight px-4">
                         Born <span className="italic text-white/30">from</span> a Vision, <br />
                         Built on Experience
                     </h2>
                     
-                    <div className="w-[85vw] md:w-full max-w-2xl mx-auto h-[0.5px] bg-white/20 relative">
+                    <div className="w-[80vw] md:w-full max-w-2xl mx-auto h-[0.5px] bg-white/20 relative">
                         <div ref={lineRef} className="absolute inset-0 bg-white" />
                     </div>
                 </div>
@@ -107,40 +107,40 @@ const VisionOriginSection = () => {
                 <div ref={maskRef} className="relative w-full max-w-5xl h-[350px] md:h-[400px] z-10 flex items-center justify-center">
                     
                     {/* Block 1: The Problem */}
-                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-center text-center opacity-0 pointer-events-none">
-                        <div className="flex items-center justify-center gap-3 mb-5">
+                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-center text-center opacity-0 pointer-events-none px-6">
+                        <div className="flex items-center justify-center gap-2 mb-4">
                             <span className="w-1.5 h-1.5 bg-white inline-block" />
-                            <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">THE PROBLEM</span>
+                            <span className="text-white font-sans text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">THE PROBLEM</span>
                         </div>
-                        <h3 className="font-serif text-[32px] md:text-[48px] lg:text-[56px] text-white mb-6 tracking-tight">The Trust Gap</h3>
-                        <p className="font-sans text-white/80 text-[16px] md:text-[19px] leading-relaxed max-w-xl mx-auto">
+                        <h3 className="font-serif text-[26px] md:text-[48px] lg:text-[56px] text-white mb-4 tracking-tight">The Trust Gap</h3>
+                        <p className="font-sans text-white/70 text-[15px] md:text-[19px] leading-relaxed max-w-xl mx-auto">
                             Leadership development has focused on skills and frameworks, while trust in leaders continues to decline. Organizations optimize performance—but lose people, engagement, and long-term resilience.
                         </p>
                     </div>
 
                     {/* Block 2: The Insight */}
-                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-center text-center opacity-0 pointer-events-none">
-                        <div className="flex items-center justify-center gap-3 mb-5">
+                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-center text-center opacity-0 pointer-events-none px-6">
+                        <div className="flex items-center justify-center gap-2 mb-4">
                             <span className="w-1.5 h-1.5 bg-white inline-block" />
-                            <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">THE INSIGHT</span>
+                            <span className="text-white font-sans text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">THE INSIGHT</span>
                         </div>
-                        <h3 className="font-serif text-[32px] md:text-[48px] lg:text-[56px] text-white mb-6 tracking-tight">
+                        <h3 className="font-serif text-[26px] md:text-[48px] lg:text-[56px] text-white mb-4 tracking-tight">
                             Trust is the Missing <br />
                             Foundation
                         </h3>
-                        <p className="font-sans text-white/80 text-[16px] md:text-[19px] leading-relaxed max-w-xl mx-auto">
+                        <p className="font-sans text-white/70 text-[15px] md:text-[19px] leading-relaxed max-w-xl mx-auto">
                             Through years of research and global consulting, one insight became clear: trust isn’t a soft skill—it’s the currency of leadership effectiveness.
                         </p>
                     </div>
 
                     {/* Block 3: The Solution */}
-                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-center text-center opacity-0 pointer-events-none">
-                        <div className="flex items-center justify-center gap-3 mb-5">
+                    <div className="content-reveal absolute inset-x-0 lg:inset-x-auto flex flex-col items-center text-center opacity-0 pointer-events-none px-6">
+                        <div className="flex items-center justify-center gap-2 mb-4">
                             <span className="w-1.5 h-1.5 bg-white inline-block" />
-                            <span className="text-white font-sans text-[11px] md:text-xs font-bold tracking-[0.3em] uppercase">THE SOLUTION</span>
+                            <span className="text-white font-sans text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">THE SOLUTION</span>
                         </div>
-                        <h3 className="font-serif text-[32px] md:text-[48px] lg:text-[56px] text-white mb-6 tracking-tight">An Integrated Ecosystem</h3>
-                        <p className="font-sans text-white/80 text-[16px] md:text-[19px] leading-relaxed max-w-xl mx-auto">
+                        <h3 className="font-serif text-[26px] md:text-[48px] lg:text-[56px] text-white mb-4 tracking-tight">An Integrated Ecosystem</h3>
+                        <p className="font-sans text-white/70 text-[15px] md:text-[19px] leading-relaxed max-w-xl mx-auto">
                             Trust cannot be built through training alone. It requires research, development, organizational transformation, and continuous learning—working together.
                         </p>
                     </div>

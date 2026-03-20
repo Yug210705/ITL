@@ -105,14 +105,14 @@ const JourneySection = () => {
         <section className="relative w-full min-h-screen flex flex-col py-24 overflow-x-hidden select-none">
             <div className='absolute h-3/4 w-full bottom-0 left-0 z-10 bg-linear-to-t from-[#0A0A0A] to-transparent'></div>
 
-            <div className="w-full max-w-7xl mx-auto px-8 lg:px-12 flex flex-col items-center mb-8 shrink-0 z-20">
-                <div className="flex items-center gap-3 mb-6">
-                    <span className="w-2.5 h-2.5 bg-white inline-block" />
-                    <span className="text-white font-sans text-xs font-bold tracking-[0.2em] uppercase">
+            <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center mb-4 md:mb-8 shrink-0 z-20 text-center">
+                <div className="flex items-center justify-center gap-3 mb-4 md:mb-6">
+                    <span className="w-1.5 md:w-2.5 h-1.5 md:h-2.5 bg-white inline-block" />
+                    <span className="text-white font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
                         OUR JOURNEY
                     </span>
                 </div>
-                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white tracking-wide">
+                <h2 className="font-serif text-[32px] md:text-5xl lg:text-6xl text-white tracking-wide">
                     From Vision to Reality
                 </h2>
             </div>
@@ -125,47 +125,47 @@ const JourneySection = () => {
                 onMouseMove={handleMouseMove}
                 style={{ scrollBehavior: 'smooth' }}
             >
-                <div className="flex w-max min-h-[600px] h-full pt-12 relative">
+                <div className="flex w-max min-h-[500px] md:min-h-[600px] h-full pt-12 relative">
 
                     {journeyData.map((item, index) => (
-                        <div key={index} className="relative w-[380px] md:w-[480px] shrink-0 h-full">
+                        <div key={index} className="relative w-[300px] sm:w-[380px] md:w-[480px] shrink-0 h-full">
                             <div className="absolute top-0 left-0 h-full w-0">
-                                <div className="absolute top-0 flex flex-col items-center -translate-x-1/2 w-32">
-                                    <span className="text-white font-sans text-base font-light tracking-widest mb-1">{item.year}</span>
-                                    <span className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_2px_white]" />
+                                <div className="absolute top-0 flex flex-col items-center -translate-x-1/2 w-24 md:w-32">
+                                    <span className="text-white font-sans text-sm md:text-base font-light tracking-widest mb-1">{item.year}</span>
+                                    <span className="w-1 md:w-1.5 h-1 md:h-1.5 bg-white rounded-full shadow-[0_0_2px_white]" />
                                 </div>
 
                                 {item.hasStartLabel ? (
                                     <>
-                                        <div className="absolute top-[220px] left-0 -translate-x-1/2 -rotate-90 flex items-center text-white font-sans text-base tracking-widest uppercase whitespace-nowrap origin-center z-10">
+                                        <div className="absolute top-[180px] md:top-[220px] left-0 -translate-x-1/2 -rotate-90 flex items-center text-white font-sans text-xs md:text-base tracking-widest uppercase whitespace-nowrap origin-center z-10">
                                             This is where the work began &rarr;
                                         </div>
-                                        <div className="absolute top-[420px] h-[150vh] w-px -translate-x-1/2 z-0"
+                                        <div className="absolute top-[420px] h-full w-px -translate-x-1/2 z-0 opacity-50"
                                             style={{
                                                 backgroundImage: 'repeating-linear-gradient(to bottom, rgba(255,255,255, 0.7) 0px, rgba(255,255,255, 0.7) 6px, transparent 6px, transparent 12px)'
                                             }}
                                         />
                                     </>
                                 ) : (
-                                    <div className="absolute top-[45px] h-[150vh] w-px bg-white -translate-x-1/2" />
+                                    <div className="absolute top-[45px] h-full w-px bg-white/30 -translate-x-1/2" />
                                 )}
                             </div>
                             <div
-                                className="absolute top-[45px] h-[150vh] left-[33.33%] w-px -translate-x-1/2 z-0"
+                                className="absolute top-[45px] h-full left-[33.33%] w-px -translate-x-1/2 z-0 opacity-20"
                                 style={{
                                     backgroundImage: 'repeating-linear-gradient(to bottom, rgba(255,255,255, 0.5) 0px, rgba(255,255,255, 0.5) 6px, transparent 6px, transparent 12px)'
                                 }}
                             />
                             <div
-                                className="absolute top-[45px] h-[150vh] left-[66.66%] w-px -translate-x-1/2 z-0"
+                                className="absolute top-[45px] h-full left-[66.66%] w-px -translate-x-1/2 z-0 opacity-20"
                                 style={{
                                     backgroundImage: 'repeating-linear-gradient(to bottom, rgba(255,255,255, 0.5) 0px, rgba(255,255,255, 0.5) 6px, transparent 6px, transparent 12px)'
                                 }}
                             />
-                            <div className={`ml-16 md:ml-20 w-[300px] md:w-[350px] p-8 z-100 rounded-2xl border border-[#FFFFFF14] bg-[#FFFFFF14] backdrop-blur-sm shadow-[0_0_30px_rgba(255,255,255,0.02)] transition-transform duration-300 relative ${item.marginTop}`}>
-                                <div className='mb-4'>{item.icon}</div>
-                                <h3 className="font-serif text-2xl text-white mb-4 tracking-wide">{item.title}</h3>
-                                <p>{item.content}</p>
+                            <div className={`ml-8 md:ml-20 w-[240px] sm:w-[300px] md:w-[350px] p-6 md:p-8 shrink-0 rounded-2xl border border-[#FFFFFF14] bg-[#FFFFFF0A] backdrop-blur-sm shadow-[0_0_30px_rgba(255,255,255,0.02)] transition-transform duration-300 relative ${item.marginTop} hover:scale-[1.02]`}>
+                                <div className='mb-4 scale-75 md:scale-100 origin-left'>{item.icon}</div>
+                                <h3 className="font-serif text-lg md:text-2xl text-white mb-2 md:mb-4 tracking-wide">{item.title}</h3>
+                                <div className="text-sm md:text-base">{item.content}</div>
                             </div>
 
                         </div>

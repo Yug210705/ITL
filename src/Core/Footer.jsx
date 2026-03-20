@@ -5,8 +5,8 @@ const Footer = () => {
     return (
         <footer className="relative w-full bg-[#0A0A0A66] text-white pt-24 mt-20 pb-8 px-4 md:px-8 font-sans">
             <div className="max-w-7xl mx-auto flex flex-col">
-                <div className="absolute -top-[5%] left-0 w-full h-full flex justify-center items-start overflow-hidden">
-                    <svg width="614" height="264" viewBox="0 0 614 264" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="absolute -top-[5%] left-1/2 -translate-x-1/2 w-full h-full flex justify-center items-start overflow-hidden pointer-events-none opacity-20 md:opacity-100">
+                    <svg width="614" height="264" viewBox="0 0 614 264" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[80%] md:w-auto h-auto">
                         <path d="M5.20822 239.459H29.7612L84.4475 20.0789H59.8945L65.1027 0H163.315L158.107 20.0789H133.554L78.8673 239.459H103.42L98.2121 259.538H0L5.20822 239.459Z" fill="white" />
                         <path d="M142.087 264C133.406 264 126.71 261.645 121.998 256.935C117.286 252.225 114.93 246.524 114.93 239.831C114.93 237.104 115.302 233.882 116.046 230.163C118.03 222.479 121.874 216.406 127.578 211.944C133.53 207.234 140.723 204.879 149.155 204.879C157.835 204.879 164.532 207.358 169.244 212.315C173.956 217.025 176.312 222.727 176.312 229.42C176.312 232.146 175.94 235.369 175.196 239.087C173.212 246.772 169.244 252.845 163.292 257.307C157.587 261.769 150.519 264 142.087 264Z" fill="white" />
                         <path d="M204.045 239.459H237.526L291.468 21.5662H240.874L229.342 67.3014H193.256L209.997 0H432.834L416.094 67.3014H380.008L391.541 21.5662H340.574L286.632 239.459H320.114L314.905 259.538H198.836L204.045 239.459Z" fill="white" />
@@ -60,13 +60,13 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="flex flex-col lg:flex-row justify-between items-end gap-12 mb-14 px-4">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-14 px-4">
                     <div className="max-w-md w-full">
                         <div className="flex items-center gap-4 mb-6">
-                            <h2 className="font-serif italic text-5xl font-black leading-none tracking-tighter">I.T.L</h2>
+                            <h2 className="font-serif italic text-4xl md:text-5xl font-black leading-none tracking-tighter">I.T.L</h2>
                             <div className="flex flex-col">
-                                <span className="text-xl font-serif leading-none mb-1">Institute for</span>
-                                <span className="text-xl font-serif leading-none">Trusted Leadership</span>
+                                <span className="text-lg md:text-xl font-serif leading-none mb-1">Institute for</span>
+                                <span className="text-lg md:text-xl font-serif leading-none">Trusted Leadership</span>
                             </div>
                         </div>
                         <p className="font-sans text-[#525252] text-sm leading-relaxed">
@@ -76,8 +76,8 @@ const Footer = () => {
                     </div>
 
                     <div className="w-full max-w-md">
-                        <h3 className="font-serif text-xl mb-4 text-[#525252]">Join our community of trusted leaders</h3>
-                        <div className="flex gap-2">
+                        <h3 className="font-serif text-lg md:text-xl mb-4 text-[#525252]">Join our community of trusted leaders</h3>
+                        <div className="flex flex-col sm:flex-row gap-2">
                             <input
                                 type="email"
                                 placeholder="Name@email.com"

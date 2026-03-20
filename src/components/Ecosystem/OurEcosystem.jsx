@@ -90,26 +90,45 @@ const OurEcosystem = () => {
     return () => ctx.revert();
   }, []);
 
+  // Animate tab content change
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.from(".tab-content-reveal", {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power2.out"
+      });
+      gsap.from(".mockup-reveal", {
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.6,
+        ease: "back.out(1.4)"
+      });
+    }, contentRef);
+    return () => ctx.revert();
+  }, [activeTab]);
+
   return (
       <section ref={sectionRef} className="w-full relative pt-4 px-4 md:px-0 bg-transparent">
 
           {/* ── GRAPHIC SECTION ── */}
-          <div className="relative w-full h-[800px] md:h-[1000px] lg:h-[1220px] overflow-hidden reveal-up">
+          <div className="relative w-full h-[600px] md:h-[1000px] lg:h-[1220px] overflow-hidden reveal-up">
               
               {/* Left text — vertically centered in large screens, top-centered in mobile */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-20 text-center lg:left-0 lg:translate-x-0 lg:top-[45%] lg:-translate-y-1/2 lg:pl-16 lg:text-left z-10 w-full lg:w-auto px-6">
-                  <span className="flex items-center justify-center lg:justify-start gap-2 font-sans text-[9px] font-bold tracking-[0.22em] uppercase text-white/60 mb-5">
-                      <span className="w-[5px] h-[5px] bg-white/60 inline-block"></span>
+              <div className="absolute left-1/2 -translate-x-1/2 top-12 text-center lg:left-0 lg:translate-x-0 lg:top-[45%] lg:-translate-y-1/2 lg:pl-16 lg:text-left z-10 w-full lg:w-auto px-6">
+                  <span className="flex items-center justify-center lg:justify-start gap-2 font-sans text-[8px] md:text-[9px] font-bold tracking-[0.22em] uppercase text-white/60 mb-4 md:mb-5">
+                      <span className="w-1 md:w-[5px] h-1 md:h-[5px] bg-white/60 inline-block"></span>
                       THE POWER OF INTEGRATION
                   </span>
-                  <h2 className="font-serif text-[42px] md:text-[52px] lg:text-[76px] text-white leading-[1.0] tracking-normal mb-8">
+                  <h2 className="font-serif text-[30px] sm:text-[34px] md:text-[52px] lg:text-[76px] text-white leading-[1.0] tracking-normal mb-8">
                       Our Ecosystem
                   </h2>
               </div>
 
               {/* Concentric rings — scales down for mobile */}
-              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.4] md:scale-[0.7] lg:scale-100" 
-                   style={{ top: '45%', left: '88%', transform: 'translate(-50%, -50%) scale(var(--tw-scale-x))' }}>
+              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.35] sm:scale-[0.4] md:scale-[0.6] lg:scale-100 top-[55%] lg:top-[45%] left-1/2 lg:left-[88%] -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 transition-all duration-700">
                   
                   {/* Outer ring */}
                   <div className="absolute rounded-full border border-[#2a2a2a]"
@@ -184,16 +203,16 @@ const OurEcosystem = () => {
 
                           {/* LEFT: text */}
                           <div className="w-full lg:w-[42%] flex flex-col justify-center relative z-10 p-8 md:p-12 lg:p-14 lg:pl-16">
-                              <div className="flex items-center gap-2 mb-5">
+                              <div className="flex items-center gap-2 mb-5 tab-content-reveal">
                                   <span className="w-[5px] h-[5px] bg-[#888] inline-block flex-shrink-0"></span>
                                   <span className="font-sans text-[9px] font-bold tracking-[0.22em] uppercase text-[#777]">
                                       {activeData.subtitle}
                                   </span>
                               </div>
-                              <h3 className="font-serif text-[38px] lg:text-[50px] text-white mb-6 leading-[1.1] font-normal">
+                              <h3 className="font-serif text-[38px] lg:text-[50px] text-white mb-6 leading-[1.1] font-normal tab-content-reveal">
                                   {activeData.title}
                               </h3>
-                              <ul className="flex flex-col gap-3 mb-9 text-[#666] text-[13.5px] font-sans font-light">
+                              <ul className="flex flex-col gap-3 mb-9 text-[#666] text-[13.5px] font-sans font-light tab-content-reveal">
                                   {activeData.bullets.map((bullet, idx) => (
                                       <li key={idx} className="flex items-start gap-3">
                                           <span className="w-[5px] h-[5px] rounded-full bg-[#444] mt-[7px] shrink-0"></span>
@@ -201,7 +220,7 @@ const OurEcosystem = () => {
                                       </li>
                                   ))}
                               </ul>
-                              <div>
+                              <div className="tab-content-reveal">
                                   <button onClick={() => window.open('#', '_blank')} className="bg-[#0055FF] hover:bg-[#0044ee] transition-colors text-white
                                       text-[12px] font-medium py-[10px] px-6 rounded-md tracking-wide w-full md:w-fit">
                                       {activeData.btnLabel}
@@ -210,7 +229,7 @@ const OurEcosystem = () => {
                           </div>
 
                           {/* RIGHT: mockup */}
-                          <div className="flex-1 flex flex-col items-center lg:items-start justify-center relative z-10 p-8 pt-0 lg:p-10 lg:pl-4">
+                          <div className="flex-1 flex flex-col items-center lg:items-start justify-center relative z-10 p-8 pt-0 lg:p-10 lg:pl-4 mockup-reveal">
                               <div className="w-full bg-[#060606] rounded-[22px] border border-[#2a2a2a] p-[10px] md:p-[14px]"
                                    style={{
                                        boxShadow: '0 32px 80px rgba(0,0,0,0.9), 0 8px 24px rgba(0,0,0,0.6)',

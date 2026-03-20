@@ -82,58 +82,62 @@ const InfoSlider = () => {
                     </defs>
                 </svg>
             </div>
-            <div className="relative z-10 w-full h-full flex flex-col pt-4 px-4 md:px-0">
-                <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-2 grid-rows-2 w-full border-b border-[#FFFFFF14]">
-                    <div className={`border-b border-r border-[#FFFFFF14] p-8 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 1 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
+            <div className="relative z-10 w-full h-full flex flex-col pt-2 md:pt-4 px-4 md:px-0">
+                <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 w-full border-b border-[#FFFFFF14] overflow-y-auto lg:overflow-hidden">
+                    {/* Top Left / Mobile 1 */}
+                    <div className={`border-b lg:border-r border-[#FFFFFF14] p-6 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 1 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
                         <div className="animate-fadeInKey" key={`tl-${activeSlide}`}>
-                            <div className="flex items-center gap-2 mb-6">
-                                <span className="w-2 h-2 bg-white inline-block"></span>
-                                <span className="font-sans text-xs tracking-[0.2em] uppercase text-white">{slides[activeSlide].tl.label}</span>
+                            <div className="flex items-center gap-2 mb-4 md:mb-6">
+                                <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-white inline-block"></span>
+                                <span className="font-sans text-[10px] md:text-xs tracking-[0.2em] uppercase text-white">{slides[activeSlide].tl.label}</span>
                             </div>
-                            <h2 className="font-serif text-2xl md:text-4xl lg:text-5xl leading-tight">{slides[activeSlide].tl.title}</h2>
+                            <h2 className="font-serif text-xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight">{slides[activeSlide].tl.title}</h2>
                         </div>
                     </div>
+                    {/* Top Right / Mobile 2 */}
                     <div className={`border-b border-[#FFFFFF14] flex flex-col justify-center relative overflow-hidden transition-all duration-200 ${activeSlide === 0 || activeSlide === 2 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
-                        <div className="w-full h-full animate-fadeInKey flex flex-col justify-center" key={`tr-${activeSlide}`}>
+                        <div className="w-full h-full animate-fadeInKey flex flex-col justify-center p-6 md:p-0" key={`tr-${activeSlide}`}>
                             {slides[activeSlide].tr.type === 'image' && (
-                                <img src={slides[activeSlide].tr.src} alt={slides[activeSlide].tr.alt} className="w-full h-full object-contain" />
+                                <img src={slides[activeSlide].tr.src} alt={slides[activeSlide].tr.alt} className="w-full h-48 md:h-full object-contain" />
                             )}
                             {slides[activeSlide].tr.type === 'stat' && (
                                 <div className="text-center p-4">
-                                    <span className="font-sans font-medium text-5xl md:text-6xl block mb-4">{slides[activeSlide].tr.value}</span>
-                                    <p className="font-sans text-base text-[#FFFFFFA3] max-w-sm mx-auto">{slides[activeSlide].tr.text}</p>
-                                    <p className="font-sans text-xs font-bold mt-4 text-white uppercase tracking-[0.2em]">{slides[activeSlide].tr.source}</p>
+                                    <span className="font-sans font-medium text-4xl md:text-6xl block mb-2 md:mb-4">{slides[activeSlide].tr.value}</span>
+                                    <p className="font-sans text-sm md:text-base text-[#FFFFFFA3] max-w-sm mx-auto">{slides[activeSlide].tr.text}</p>
+                                    <p className="font-sans text-[10px] md:text-xs font-bold mt-2 md:mt-4 text-white uppercase tracking-[0.2em]">{slides[activeSlide].tr.source}</p>
                                 </div>
                             )}
                         </div>
                     </div>
-                    <div className={`border-r border-[#FFFFFF14] p-8 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 0 || activeSlide === 2 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
+                    {/* Bottom Left / Mobile 3 */}
+                    <div className={`border-b lg:border-b-0 lg:border-r border-[#FFFFFF14] p-6 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 0 || activeSlide === 2 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
                         <div className="w-full h-full animate-fadeInKey flex flex-col justify-center" key={`bl-${activeSlide}`}>
                             {slides[activeSlide].bl.isText && (
-                                <p className="font-sans font-light text-lg text-white leading-relaxed whitespace-pre-line overflow-y-auto max-h-full">
+                                <p className="font-sans font-light text-[15px] md:text-lg text-white/80 leading-relaxed whitespace-pre-line lg:overflow-y-auto max-h-full">
                                     {slides[activeSlide].bl.text}
                                 </p>
                             )}
                             {slides[activeSlide].bl.type === 'stat' && (
                                 <div className="text-center p-4">
-                                    <span className="font-sans font-medium text-5xl md:text-6xl block mb-4">{slides[activeSlide].bl.value}</span>
-                                    <p className="font-sans text-base text-[#FFFFFFA3] max-w-sm mx-auto">{slides[activeSlide].bl.text}</p>
-                                    <p className="font-sans text-xs font-bold mt-4 text-white uppercase tracking-[0.2em]">{slides[activeSlide].bl.source}</p>
+                                    <span className="font-sans font-medium text-4xl md:text-6xl block mb-2 md:mb-4">{slides[activeSlide].bl.value}</span>
+                                    <p className="font-sans text-sm md:text-base text-[#FFFFFFA3] max-w-sm mx-auto">{slides[activeSlide].bl.text}</p>
+                                    <p className="font-sans text-[10px] md:text-xs font-bold mt-2 md:mt-4 text-white uppercase tracking-[0.2em]">{slides[activeSlide].bl.source}</p>
                                 </div>
                             )}
                         </div>
                     </div>
-                    <div className={`p-8 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 1 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
+                    {/* Bottom Right / Mobile 4 */}
+                    <div className={`p-6 md:p-12 flex flex-col justify-center relative transition-all duration-200 ${activeSlide === 1 ? "bg-[#FFFFFF0F]" : "bg-transparent"}`}>
                         <div className="w-full h-full animate-fadeInKey flex flex-col justify-start" key={`br-${activeSlide}`}>
                             {slides[activeSlide].br.isText && (
-                                <p className="font-sans font-light text-lg text-white leading-relaxed whitespace-pre-line overflow-y-auto max-h-full">
+                                <p className="font-sans font-light text-[15px] md:text-lg text-white/80 leading-relaxed whitespace-pre-line lg:overflow-y-auto max-h-full">
                                     {slides[activeSlide].br.text}
                                 </p>
                             )}
                             {slides[activeSlide].br.type === 'link' && (
-                                <a href={slides[activeSlide].br.href} className="group flex items-center gap-2 text-4xl md:text-5xl font-serif cursor-pointer">
+                                <a href={slides[activeSlide].br.href} className="group flex items-center gap-2 text-2xl md:text-5xl font-serif cursor-pointer">
                                     {slides[activeSlide].br.text}
-                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="32" height="32" md:width="48" md:height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-12 md:h-12">
                                         <path d="M37.5 12V31.5C37.5 31.8978 37.3419 32.2794 37.0606 32.5607C36.7793 32.842 36.3978 33 36 33C35.6022 33 35.2206 32.842 34.9393 32.5607C34.658 32.2794 34.5 31.8978 34.5 31.5V15.6206L13.0612 37.0613C12.7798 37.3427 12.398 37.5008 12 37.5008C11.6019 37.5008 11.2202 37.3427 10.9387 37.0613C10.6573 36.7798 10.4991 36.398 10.4991 36C10.4991 35.602 10.6573 35.2202 10.9387 34.9388L32.3794 13.5H16.5C16.1022 13.5 15.7206 13.342 15.4393 13.0607C15.158 12.7794 15 12.3978 15 12C15 11.6022 15.158 11.2206 15.4393 10.9393C15.7206 10.658 16.1022 10.5 16.5 10.5H36C36.3978 10.5 36.7793 10.658 37.0606 10.9393C37.3419 11.2206 37.5 11.6022 37.5 12Z" fill="white" />
                                     </svg>
                                 </a>
@@ -141,33 +145,29 @@ const InfoSlider = () => {
                         </div>
                     </div>
                 </div>
-                <div className="shrink-0 w-full h-16 flex items-center justify-center gap-4 text-2xl font-sans text-[#FFFFFF4D] mt-auto py-4">
+                <div className="shrink-0 w-full lg:h-16 flex items-center justify-center gap-4 text-xl md:text-2xl font-sans text-[#FFFFFF4D] mt-auto py-4 md:py-6">
                     <span className={`transition-colors duration-300 ${activeSlide >= 0 ? "text-white font-bold" : ""}`}>01</span>
-                    <div className="relative w-[200px] h-[10px]">
-                        <svg width="200" height="10" className="absolute top-0 left-0 opacity-80 z-0">
-                            <line x1="0" y1="1" x2="200" y2="1" stroke="#FFFFFF52" strokeWidth="4" strokeDasharray="4 4" />
-                            <line x1="0" y1="9" x2="200" y2="9" stroke="#FFFFFF52" strokeWidth="4" strokeDasharray="4 4" />
+                    <div className="relative w-[100px] md:w-[200px] h-[6px] md:h-[10px]">
+                        <svg width="100%" height="100%" className="absolute top-0 left-0 opacity-80 z-0">
+                            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#FFFFFF52" strokeWidth="2" strokeDasharray="4 4" />
                         </svg>
                         <div className="absolute top-0 left-0 h-full overflow-hidden z-10"
                             style={{ width: `${Math.min(100, Math.max(0, scrollProgress * 3 * 100))}%` }}>
                             <svg width="200" height="10" className="min-w-[200px]">
-                                <line x1="0" y1="1" x2="200" y2="1" stroke="white" strokeWidth="4" strokeDasharray="4 4" />
-                                <line x1="0" y1="9" x2="200" y2="9" stroke="white" strokeWidth="4" strokeDasharray="4 4" />
+                                <line x1="0" y1="50%" x2="200" y2="50%" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
                             </svg>
                         </div>
                     </div>
 
                     <span className={`transition-colors duration-300 ${activeSlide >= 1 ? "text-white font-bold" : ""}`}>02</span>
-                    <div className="relative w-[200px] h-[10px]">
-                        <svg width="200" height="10" className="absolute top-0 left-0 opacity-80 z-0">
-                            <line x1="0" y1="1" x2="200" y2="1" stroke="#FFFFFF52" strokeWidth="4" strokeDasharray="4 4" />
-                            <line x1="0" y1="9" x2="200" y2="9" stroke="#FFFFFF52" strokeWidth="4" strokeDasharray="4 4" />
+                    <div className="relative w-[100px] md:w-[200px] h-[6px] md:h-[10px]">
+                        <svg width="100%" height="100%" className="absolute top-0 left-0 opacity-80 z-0">
+                            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#FFFFFF52" strokeWidth="2" strokeDasharray="4 4" />
                         </svg>
                         <div className="absolute top-0 left-0 h-full overflow-hidden z-10"
                             style={{ width: `${Math.min(100, Math.max(0, (scrollProgress * 3 - 1) * 100))}%` }}>
                             <svg width="200" height="10" className="min-w-[200px]">
-                                <line x1="0" y1="1" x2="200" y2="1" stroke="white" strokeWidth="4" strokeDasharray="4 4" />
-                                <line x1="0" y1="9" x2="200" y2="9" stroke="white" strokeWidth="4" strokeDasharray="4 4" />
+                                <line x1="0" y1="50%" x2="200" y2="50%" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
                             </svg>
                         </div>
                     </div>

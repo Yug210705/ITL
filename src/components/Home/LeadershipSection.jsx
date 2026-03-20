@@ -122,25 +122,25 @@ const LeadershipSection = () => {
                 </h2>
             </div>
             <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row gap-6">
-                <div className="w-full md:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="w-full lg:w-[65%] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 px-4 md:px-0">
                     {impactCards.map((card, index) => (
                         <div
                             key={index}
-                            className="impact-card bg-[#0A0A0AA3] p-6 rounded-2xl flex flex-col gap-8 transition-colors duration-300 group min-h-[250px]"
+                            className="impact-card bg-[#0A0A0AA3] p-6 md:p-8 rounded-2xl flex flex-col gap-6 md:gap-8 transition-colors duration-300 group min-h-[200px] md:min-h-[250px]"
                         >
                             <div className="w-10 h-10 flex items-center justify-start opacity-70 group-hover:opacity-100 transition-opacity">
                                 {card.icon}
                             </div>
                             <div className="mt-auto">
-                                <h3 className="font-serif text-2xl text-white mb-3">{card.title}</h3>
-                                <p className="font-sans text-white text-sm leading-relaxed">
+                                <h3 className="font-serif text-xl md:text-2xl text-white mb-2 md:mb-3">{card.title}</h3>
+                                <p className="font-sans text-white/70 text-sm leading-relaxed">
                                     {card.description}
                                 </p>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="impact-image w-full md:w-[35%] bg-[#F0F4F8] rounded-2xl overflow-hidden relative min-h-[500px] lg:min-h-auto">
+                <div className="impact-image w-full lg:w-[35%] bg-[#F0F4F8] rounded-2xl overflow-hidden relative min-h-[300px] md:min-h-[500px] lg:min-h-auto px-4 lg:px-0 mx-4 lg:mx-0">
                     <img
                         src="/images/lucaweb2.webp"
                         alt="Luca Project Showcase"
