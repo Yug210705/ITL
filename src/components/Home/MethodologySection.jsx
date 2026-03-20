@@ -26,13 +26,15 @@ const MethodologySection = () => {
                 { opacity: 1, duration: 0.8 },
                 "<"
             );
-        tl.to(".bar-1", { height: "100%", duration: 1, ease: "power2.out" })
-            .to(".text-1", { opacity: 1, y: -10, duration: 0.5, ease: "power2.out" }, "-=0.2");
-        tl.to(".bar-2", { height: "100%", duration: 1, ease: "power2.out" })
-            .to(".text-2", { opacity: 1, y: -10, duration: 0.5, ease: "power2.out" }, "-=0.2");
-        tl.to(".bar-3", { height: "100%", duration: 1, ease: "power2.out" })
-            .to(".text-3", { opacity: 1, y: -10, duration: 0.5, ease: "power2.out" }, "-=0.2");
 
+        const isMobile = window.innerWidth < 768;
+
+        tl.to(".bar-1", { [isMobile ? "width" : "height"]: "100%", duration: 1, ease: "power2.out" })
+            .to(".text-1", { opacity: 1, y: isMobile ? 0 : -10, duration: 0.5, ease: "power2.out" }, "-=0.2");
+        tl.to(".bar-2", { [isMobile ? "width" : "height"]: "100%", duration: 1, ease: "power2.out" })
+            .to(".text-2", { opacity: 1, y: isMobile ? 0 : -10, duration: 0.5, ease: "power2.out" }, "-=0.2");
+        tl.to(".bar-3", { [isMobile ? "width" : "height"]: "100%", duration: 1, ease: "power2.out" })
+            .to(".text-3", { opacity: 1, y: isMobile ? 0 : -10, duration: 0.5, ease: "power2.out" }, "-=0.2");
 
     }, { scope: containerRef });
 
@@ -54,12 +56,13 @@ const MethodologySection = () => {
                     </p>
                 </div>
             </div>
-            <div className="max-w-6xl mx-auto pt-28 h-screen flex justify-between items-end gap-4 px-4 md:px-0">
-                <div className="w-1/3 h-full flex items-end gap-4 group">
-                    <div className="bar-1 w-full md:w-30  bg-gradient-to-b from-[#000000] to-transparent h-0 relative">
-                        <div className="absolute top-0 left-full ml-4 md:ml-8 w-[300px] opacity-0 text-1">
-                            <h3 className="font-serif text-2xl md:text-3xl text-white mb-3">Research & Insights</h3>
-                            <ul className="list-disc list-inside text-white text-sm space-y-1 font-sans">
+            <div className="max-w-6xl mx-auto pt-16 md:pt-28 min-h-[60vh] md:h-screen flex flex-col md:flex-row justify-between items-end gap-16 md:gap-4 px-4 md:px-0">
+                {/* Section 1 */}
+                <div className="w-full md:w-1/3 h-auto md:h-full flex flex-col md:flex-row items-end gap-6 md:gap-4 group">
+                    <div className="bar-1 w-full md:w-30 bg-gradient-to-b from-[#000000] to-transparent h-2 md:h-0 relative">
+                        <div className="relative md:absolute top-0 left-0 md:left-full mt-4 md:mt-0 md:ml-8 w-full md:w-[300px] opacity-0 text-1">
+                            <h3 className="font-serif text-2xl md:text-3xl text-white mb-2 md:mb-3">Research & Insights</h3>
+                            <ul className="list-disc list-inside text-white text-[14px] md:text-sm space-y-1 font-sans">
                                 <li>Evidence-based leadership models</li>
                                 <li>Continuous innovation</li>
                                 <li>Data-driven understanding</li>
@@ -67,11 +70,13 @@ const MethodologySection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-1/3 h-[70%] flex items-end gap-4 group">
-                    <div className="bar-2 w-full md:w-30  bg-gradient-to-b from-[#000000] to-transparent h-0 relative">
-                        <div className="absolute top-0 left-full ml-4 md:ml-8 w-[400px] opacity-0 text-2">
-                            <h3 className="font-serif text-2xl md:text-3xl text-white mb-3">Training & Development</h3>
-                            <ul className="list-disc list-inside text-white text-sm space-y-1 font-sans">
+
+                {/* Section 2 */}
+                <div className="w-full md:w-1/3 h-auto md:h-[70%] flex flex-col md:flex-row items-end gap-6 md:gap-4 group">
+                    <div className="bar-2 w-full md:w-30 bg-gradient-to-b from-[#000000] to-transparent h-2 md:h-0 relative">
+                        <div className="relative md:absolute top-0 left-0 md:left-full mt-4 md:mt-0 md:ml-8 w-full md:w-[400px] opacity-0 text-2">
+                            <h3 className="font-serif text-2xl md:text-3xl text-white mb-2 md:mb-3">Training & Development</h3>
+                            <ul className="list-disc list-inside text-white text-[14px] md:text-sm space-y-1 font-sans">
                                 <li>Practical skill-building</li>
                                 <li>Certification programs</li>
                                 <li>Organizational transformation</li>
@@ -79,11 +84,13 @@ const MethodologySection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-1/3 h-[40%] flex items-end gap-4 group">
-                    <div className="bar-3 w-full md:w-30 bg-gradient-to-b from-[#000000] to-transparent h-0 relative">
-                        <div className="absolute top-0 left-full ml-4 md:ml-8 w-[300px] opacity-0 text-3">
-                            <h3 className="font-serif text-2xl md:text-3xl text-white mb-3">Consulting & Implementation</h3>
-                            <ul className="list-disc list-inside text-white text-sm space-y-1 font-sans">
+
+                {/* Section 3 */}
+                <div className="w-full md:w-1/3 h-auto md:h-[40%] flex flex-col md:flex-row items-end gap-6 md:gap-4 group">
+                    <div className="bar-3 w-full md:w-30 bg-gradient-to-b from-[#000000] to-transparent h-2 md:h-0 relative">
+                        <div className="relative md:absolute top-0 left-0 md:left-full mt-4 md:mt-0 md:ml-8 w-full md:w-[300px] opacity-0 text-3">
+                            <h3 className="font-serif text-2xl md:text-3xl text-white mb-2 md:mb-3">Consulting & Implementation</h3>
+                            <ul className="list-disc list-inside text-white text-[14px] md:text-sm space-y-1 font-sans">
                                 <li>Strategic partnership</li>
                                 <li>Custom solutions</li>
                                 <li>Measurable impact</li>

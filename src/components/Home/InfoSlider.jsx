@@ -147,7 +147,7 @@ const InfoSlider = () => {
                 </div>
                 <div className="shrink-0 w-full lg:h-16 flex items-center justify-center gap-4 text-xl md:text-2xl font-sans text-[#FFFFFF4D] mt-auto py-4 md:py-6">
                     <span className={`transition-colors duration-300 ${activeSlide >= 0 ? "text-white font-bold" : ""}`}>01</span>
-                    <div className="relative w-[100px] md:w-[200px] h-[6px] md:h-[10px]">
+                    <div className="relative w-[60px] min-[400px]:w-[100px] md:w-[200px] h-[6px] md:h-[10px]">
                         <svg width="100%" height="100%" className="absolute top-0 left-0 opacity-80 z-0">
                             <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#FFFFFF52" strokeWidth="2" strokeDasharray="4 4" />
                         </svg>
@@ -160,7 +160,7 @@ const InfoSlider = () => {
                     </div>
 
                     <span className={`transition-colors duration-300 ${activeSlide >= 1 ? "text-white font-bold" : ""}`}>02</span>
-                    <div className="relative w-[100px] md:w-[200px] h-[6px] md:h-[10px]">
+                    <div className="relative w-[60px] min-[400px]:w-[100px] md:w-[200px] h-[6px] md:h-[10px]">
                         <svg width="100%" height="100%" className="absolute top-0 left-0 opacity-80 z-0">
                             <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#FFFFFF52" strokeWidth="2" strokeDasharray="4 4" />
                         </svg>

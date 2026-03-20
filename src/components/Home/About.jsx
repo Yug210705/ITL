@@ -112,7 +112,7 @@ const AboutSection = ({ bgRef }) => {
                 </svg>
             </div>
             <div className="w-full max-w-7xl px-4 md:px-12 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center h-full">
-                <div className="relative w-full aspect-square max-w-[300px] md:max-w-[400px] lg:max-w-[500px] mx-auto flex items-center justify-center order-2 lg:order-1">
+                <div className="relative w-full aspect-square max-w-[280px] min-[380px]:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] mx-auto flex items-center justify-center order-2 lg:order-1">
                     <div ref={circleRef} className="relative w-[240px] md:w-[400px] h-[240px] md:h-[400px] rounded-full flex items-center justify-center">
                         <svg className="absolute inset-0 w-full h-full rotate-90" viewBox="0 0 100 100">
                             <circle
