@@ -128,7 +128,7 @@ const OurEcosystem = () => {
               </div>
 
               {/* Concentric rings — scales down for mobile */}
-              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.35] sm:scale-[0.4] md:scale-[0.6] lg:scale-100 top-[55%] lg:top-[45%] left-1/2 lg:left-[88%] -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 transition-all duration-700">
+              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.3] min-[400px]:scale-[0.35] sm:scale-[0.4] md:scale-[0.6] lg:scale-100 top-[55%] lg:top-[45%] left-1/2 lg:left-[88%] -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 transition-all duration-700">
                   
                   {/* Outer ring */}
                   <div className="absolute rounded-full border border-[#2a2a2a]"

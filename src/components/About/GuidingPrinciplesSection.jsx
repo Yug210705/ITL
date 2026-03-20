@@ -65,72 +65,97 @@ const GuidingPrinciplesSection = () => {
 
             </div>
 
-            <div className="relative w-full max-w-6xl aspect-video flex items-center justify-center">
-                <svg
-                    className="absolute inset-0 w-full h-full pointer-events-none z-0"
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="none"
-                    style={{
-                        maskImage: "radial-gradient(circle at center, transparent 120px, black 121px)",
-                        WebkitMaskImage: "radial-gradient(circle at center, transparent 120px, black 121px)"
-                    }}
-                >
-                    <path pathLength="100" d="M 50 50 C 40 50, 40 25, 30 25" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
-                    <path pathLength="100" d="M 50 50 L 22 50" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
-                    <path pathLength="100" d="M 50 50 C 40 50, 40 75, 30 75" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
+            <div className="relative w-full max-w-6xl mx-auto flex items-center justify-center p-4">
+                {/* Desktop Diagram */}
+                <div className="hidden md:block relative w-full aspect-video">
+                    <svg
+                        className="absolute inset-0 w-full h-full pointer-events-none z-0"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                        style={{
+                            maskImage: "radial-gradient(circle at center, transparent 120px, black 121px)",
+                            WebkitMaskImage: "radial-gradient(circle at center, transparent 120px, black 121px)"
+                        }}
+                    >
+                        <path pathLength="100" d="M 50 50 C 40 50, 40 25, 30 25" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
+                        <path pathLength="100" d="M 50 50 L 22 50" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
+                        <path pathLength="100" d="M 50 50 C 40 50, 40 75, 30 75" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
+                        <path pathLength="100" d="M 50 50 C 60 50, 60 25, 70 25" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
+                        <path pathLength="100" d="M 50 50 L 78 50" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
+                        <path pathLength="100" d="M 50 50 C 60 50, 60 75, 70 75" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
+                    </svg>
 
-                    <path pathLength="100" d="M 50 50 C 60 50, 60 25, 70 25" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
-                    <path pathLength="100" d="M 50 50 L 78 50" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
-                    <path pathLength="100" d="M 50 50 C 60 50, 60 75, 70 75" className="connector-line fill-none stroke-white/20 stroke-[0.15] [stroke-dasharray:1,1]" />
-                </svg>
-                <div className="center-node absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[240px] h-[240px] md:w-[280px] md:h-[280px] rounded-full border border-[#FFFFFF80] bg-[#FFFFFF14] flex items-center justify-center backdrop-blur-sm" style={{ boxShadow: "0px 4px 100px 0px #FFFFFF1A" }}>
-                    <div className="flex items-center gap-3">
+                    <div className="center-node absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[280px] h-[280px] rounded-full border border-[#FFFFFF80] bg-[#FFFFFF14] flex items-center justify-center backdrop-blur-sm" style={{ boxShadow: "0px 4px 100px 0px #FFFFFF1A" }}>
+                        <div className="flex items-center gap-3">
+                            <span className="w-2.5 h-2.5 bg-white inline-block" />
+                            <span className="text-white font-sans text-sm font-bold tracking-[0.2em] uppercase mt-0.5">WHAT GUIDES US</span>
+                        </div>
+                    </div>
+
+                    {/* Nodes - Top Left */}
+                    <div className="principle-node absolute top-[25%] left-[30%] -translate-y-1/2 -translate-x-full flex items-center z-10">
+                        <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
+                            <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Trust Through Transparency</span>
+                            <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                        </div>
+                    </div>
+                    {/* Mid Left */}
+                    <div className="principle-node absolute top-[50%] left-[22%] -translate-y-1/2 -translate-x-full flex items-center z-10">
+                        <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
+                            <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Evidence Over Ideology</span>
+                            <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                        </div>
+                    </div>
+                    {/* Bottom Left */}
+                    <div className="principle-node absolute top-[75%] left-[30%] -translate-y-1/2 -translate-x-full flex items-center z-10">
+                        <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
+                            <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Continuous Learning</span>
+                            <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                        </div>
+                    </div>
+                    {/* Top Right */}
+                    <div className="principle-node absolute top-[25%] left-[70%] -translate-y-1/2 flex items-center z-10">
+                        <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
+                            <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                            <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Respect for People</span>
+                        </div>
+                    </div>
+                    {/* Mid Right */}
+                    <div className="principle-node absolute top-[50%] left-[78%] -translate-y-1/2 flex items-center z-10">
+                        <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
+                            <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                            <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Impact Beyond Profit</span>
+                        </div>
+                    </div>
+                    {/* Bottom Right */}
+                    <div className="principle-node absolute top-[75%] left-[70%] -translate-y-1/2 flex items-center z-10">
+                        <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
+                            <span className="w-1.5 h-1.5 bg-white rounded-full" />
+                            <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Integration Over Isolation</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Mobile Version - Clean Vertical List */}
+                <div className="md:hidden flex flex-col items-center gap-6 w-full px-4 py-8">
+                     <div className="flex items-center gap-3 mb-12">
                         <span className="w-2.5 h-2.5 bg-white inline-block" />
-                        <span className="text-white font-sans text-sm font-bold tracking-[0.2em] uppercase mt-0.5">WHAT GUIDES US</span>
+                        <span className="text-white font-sans text-xs font-bold tracking-[0.2em] uppercase">WHAT GUIDES US</span>
                     </div>
+                    {[
+                        "Trust Through Transparency",
+                        "Evidence Over Ideology",
+                        "Continuous Learning",
+                        "Respect for People",
+                        "Impact Beyond Profit",
+                        "Integration Over Isolation"
+                    ].map((text, idx) => (
+                        <div key={idx} className="w-full max-w-[320px] principle-node flex items-center justify-between gap-4 px-6 py-4 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm">
+                             <span className="text-white/90 font-serif italic text-lg tracking-wide">{text}</span>
+                             <span className="w-1.5 h-1.5 bg-white rounded-full shrink-0" />
+                        </div>
+                    ))}
                 </div>
-                <div className="principle-node absolute top-[25%] left-[30%] -translate-y-1/2 -translate-x-full flex items-center z-10">
-                    <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
-                        <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Trust Through Transparency</span>
-                        <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                    </div>
-                </div>
-
-                <div className="principle-node absolute top-[50%] left-[22%] -translate-y-1/2 -translate-x-full flex items-center z-10">
-                    <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
-                        <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Evidence Over Ideology</span>
-                        <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                    </div>
-                </div>
-
-                <div className="principle-node absolute top-[75%] left-[30%] -translate-y-1/2 -translate-x-full flex items-center z-10">
-                    <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
-                        <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Continuous Learning</span>
-                        <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                    </div>
-                </div>
-
-                <div className="principle-node absolute top-[25%] left-[70%] -translate-y-1/2 flex items-center z-10">
-                    <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
-                        <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                        <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Respect for People</span>
-                    </div>
-                </div>
-
-                <div className="principle-node absolute top-[50%] left-[78%] -translate-y-1/2 flex items-center z-10">
-                    <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
-                        <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                        <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Impact Beyond Profit</span>
-                    </div>
-                </div>
-
-                <div className="principle-node absolute top-[75%] left-[70%] -translate-y-1/2 flex items-center z-10">
-                    <div className="flex items-center gap-4 px-6 py-2.5 rounded-full border border-[#FFFFFF0A] bg-[#FFFFFF14] whitespace-nowrap" style={{ boxShadow: "0px 0px 30px 0px #FFFFFF14" }}>
-                        <span className="w-1.5 h-1.5 bg-white rounded-full" />
-                        <span className="text-white/90 font-serif italic text-[17px] tracking-wide">Integration Over Isolation</span>
-                    </div>
-                </div>
-
             </div>
         </section>
     );

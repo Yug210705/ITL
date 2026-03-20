@@ -32,8 +32,8 @@ const FounderSection = () => {
     return (
         <section ref={containerRef} className="relative w-full py-24 px-4 md:px-8 flex justify-center">
 
-            <div className="w-full max-w-7xl mx-auto flex flex-row gap-12 md:gap-20 items-center">
-                <div className="founder-image relative rounded-2xl overflow-hidden w-full md:w-[38%] mx-auto">
+            <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-20 items-center">
+                <div className="founder-image relative rounded-2xl overflow-hidden w-full md:w-[38%] aspect-square md:aspect-auto">
                     <img
                         src="/images/founder.webp"
                         alt="Leslie Martinich"
@@ -41,17 +41,17 @@ const FounderSection = () => {
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-60 mix-blend-multiply pointer-events-none" />
                 </div>
-                <div className="founder-content w-[60%] flex flex-col items-start text-left">
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="w-2.5 h-2.5 bg-white inline-block" />
-                        <span className="text-white font-sans text-xs font-bold tracking-[0.2em] uppercase">
+                <div className="founder-content w-full md:w-[60%] flex flex-col items-center md:items-start text-center md:text-left px-4 md:px-0">
+                    <div className="flex items-center gap-3 mb-4 md:mb-6">
+                        <span className="w-2 md:w-2.5 h-2 md:h-2.5 bg-white inline-block" />
+                        <span className="text-white font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">
                             MEET OUR FOUNDER
                         </span>
                     </div>
-                    <h2 className="font-serif text-5xl md:text-6xl text-white mb-4 leading-tight">
+                    <h2 className="font-serif text-3xl md:text-6xl text-white mb-2 md:mb-4 leading-tight">
                         Leslie Martinich
                     </h2>
-                    <p className="font-sans text-white/50 text-lg md:text-xl font-light mb-10">
+                    <p className="font-sans text-white/50 text-base md:text-xl font-light mb-6 md:mb-10">
                         Founder & Group CEO, Institute of Trusted Leadership
                     </p>
                     <ul className="space-y-4 mb-12">

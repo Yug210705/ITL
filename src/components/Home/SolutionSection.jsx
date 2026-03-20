@@ -57,15 +57,15 @@ const SolutionSection = () => {
                 { scaleX: 1, opacity: 1, duration: 2, ease: "power2.out" }
             )
             .fromTo(card1Ref.current,
-                { x: "100vw", opacity: 0 },
+                { x: "100%", opacity: 0 },
                 { x: "0%", opacity: 1, duration: 4, ease: "power2.out" }
             )
             .fromTo(card2Ref.current,
-                { x: "100vw", opacity: 0 },
+                { x: "100%", opacity: 0 },
                 { x: "0%", opacity: 1, duration: 4, ease: "power2.out" }
             )
             .fromTo(card3Ref.current,
-                { x: "100vw", opacity: 0 },
+                { x: "100%", opacity: 0 },
                 { x: "0%", opacity: 1, duration: 4, ease: "power2.out" }
             );
 
