@@ -15,37 +15,37 @@ export default function HomePage() {
     const cursorRef = React.useRef(null);
 
     return (
-        <div className="w-full overflow-x-hidden">
-            <div className="relative w-full overflow-hidden">
+        <>
+            <div className="relative w-full h-full">
                 <Hero />
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full h-full">
                 <AboutSection />
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full h-full">
                 <InfoSlider />
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full h-full">
                 <SolutionSection />
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full h-full">
                 <MethodologySection />
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full h-full">
                 <VisionSection />
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full h-full">
                 <LeadershipSection />
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full h-full">
                 <RipplesSection />
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full h-full">
                 <InsightsSection />
             </div>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full h-full">
                 <JoinMovementSection />
             </div>
-        </div>
+        </>
     )
 }

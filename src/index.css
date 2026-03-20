@@ -8,9 +8,6 @@
 }
 
 @layer base {
-    html {
-        @apply overflow-x-hidden;
-    }
     body {
         @apply bg-bg-dark antialiased overflow-x-hidden;
     }
