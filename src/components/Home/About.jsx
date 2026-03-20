@@ -101,12 +101,12 @@ const AboutSection = ({ bgRef }) => {
                         <filter id="filter0_f_201_1774" x="-218" y="139" width="1904.89" height="1197.32" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                             <feFlood floodOpacity="0" result="BackgroundImageFix" />
                             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                            <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_201_1774" />
+                            <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_201_1774" />
                         </filter>
                         <filter id="filter1_f_201_1774" x="-518" y="-91" width="2404.89" height="1697.32" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                             <feFlood floodOpacity="0" result="BackgroundImageFix" />
                             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                            <feGaussianBlur stdDeviation="225" result="effect1_foregroundBlur_201_1774" />
+                            <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_201_1774" />
                         </filter>
                     </defs>
                 </svg>
