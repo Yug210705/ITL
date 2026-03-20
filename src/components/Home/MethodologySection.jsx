@@ -56,7 +56,7 @@ const MethodologySection = () => {
                     </p>
                 </div>
             </div>
-            <div className="max-w-6xl mx-auto pt-16 md:pt-28 min-h-[60vh] md:h-screen flex flex-col md:flex-row justify-between items-end gap-16 md:gap-4 px-4 md:px-0">
+            <div className="max-w-6xl mx-auto pt-16 md:pt-28 min-h-[60vh] md:h-screen flex flex-col md:flex-row justify-between items-end gap-10 md:gap-4 px-4 md:px-0">
                 {/* Section 1 */}
                 <div className="w-full md:w-1/3 h-auto md:h-full flex flex-col md:flex-row items-end gap-6 md:gap-4 group">
                     <div className="bar-1 w-full md:w-30 bg-gradient-to-b from-[#000000] to-transparent h-2 md:h-0 relative">

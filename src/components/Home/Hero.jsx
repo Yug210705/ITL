@@ -13,7 +13,7 @@ const Hero = () => {
                             BUILT ON SOLID GROUND
                         </span>
 
-                        <h1 className="font-serif text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[62px] leading-[1.1] text-white mt-4 md:mt-6 tracking-tight">
+                        <h1 className="hero-title relative z-10 font-serif text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[62px] leading-[1.25] md:leading-[1.1] text-white mt-4 md:mt-6 tracking-tight">
                             Building Leaders – <br />
                             <span className="italic text-white/30 font-serif lowercase">the</span> World Can Trust.
                         </h1>
