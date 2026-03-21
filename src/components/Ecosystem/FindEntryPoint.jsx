@@ -137,7 +137,7 @@ const FindEntryPoint = () => {
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 75%",
+                    start: "top 90%",
                 }
             });
         }, containerRef);
@@ -148,25 +148,20 @@ const FindEntryPoint = () => {
     useLayoutEffect(() => {
         if (!selectedEntry) return;
         let ctx = gsap.context(() => {
-            gsap.from(".detail-reveal", {
-                opacity: 0,
-                x: -30,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "power2.out"
-            });
-            gsap.from(".detail-icon-reveal", {
-                opacity: 0,
-                scale: 0.8,
-                duration: 1,
-                ease: "elastic.out(1, 0.75)"
-            });
+            gsap.fromTo(".detail-reveal", 
+                { opacity: 0, x: -30 }, 
+                { opacity: 1, x: 0, duration: 0.8, stagger: 0.1, ease: "power2.out" }
+            );
+            gsap.fromTo(".detail-icon-reveal", 
+                { opacity: 0, scale: 0.8 }, 
+                { opacity: 0.5, scale: 1, duration: 1, ease: "elastic.out(1, 0.75)" }
+            );
         }, containerRef);
         return () => ctx.revert();
     }, [selectedEntry]);
 
     return (
-        <section ref={containerRef} className="w-full relative pt-12 md:pt-24 pb-0 overflow-hidden z-10 bg-transparent">
+        <section ref={containerRef} className="w-full relative pt-4 md:pt-8 pb-0 overflow-hidden z-10 bg-transparent">
             {/* Background */}
             <div className="absolute inset-0 z-[-1]" style={{
                 background: 'linear-gradient(180deg, #0A0A0A 0%, #09041A 15%, #160655 25%, #2A04B2 45%, #230198 60%, #100342 85%, #070217 95%, #0A0A0A 100%)'
@@ -181,7 +176,7 @@ const FindEntryPoint = () => {
             <div className="container mx-auto max-w-[1440px] px-6 md:px-12 relative z-10">
                 
                 {/* Header Section */}
-                <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2.5fr] gap-6 md:gap-8 items-start mb-8 md:mb-24 text-left w-full mx-auto reveal-find">
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2.5fr] gap-6 md:gap-8 items-start mb-6 md:mb-16 text-left w-full mx-auto reveal-find">
                     {/* Left Header */}
                     <div className="relative pt-6 md:pt-14 md:pl-16">
                         <div className="absolute top-0 left-0 w-full h-[20px] overflow-hidden pointer-events-none hidden md:block">
@@ -220,7 +215,7 @@ const FindEntryPoint = () => {
                             <div 
                                 key={entry.id}
                                 onClick={() => setSelectedEntry(entry.id)}
-                                className={`cursor-pointer px-8 md:px-12 lg:px-[70px] py-16 md:py-[60px] lg:py-[80px] flex flex-col gap-6 relative transition-all duration-500 border-b md:border-b-0 border-white/5 md:border-r border-white/5 last:border-0 last:border-r-0 ${
+                                className={`cursor-pointer px-8 md:px-12 lg:px-[70px] py-12 md:py-[40px] lg:py-[60px] flex flex-col gap-6 relative transition-all duration-500 border-b md:border-b-0 border-white/5 md:border-r border-white/5 last:border-0 last:border-r-0 ${
                                     isActive 
                                         ? 'bg-[#482abb] shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-20' 
                                         : 'bg-transparent hover:bg-white/5 z-0'
@@ -244,7 +239,7 @@ const FindEntryPoint = () => {
 
             {/* Extended Details Overlay */}
             {selectedEntry && (
-                <div className="w-full min-h-[600px] p-8 md:p-16 lg:px-24 lg:py-24 relative overflow-hidden flex flex-col items-start bg-transparent">
+                <div className="w-full min-h-[400px] p-8 md:p-12 lg:px-24 lg:py-6 relative overflow-hidden flex flex-col items-start bg-transparent">
                     
                     <button 
                         onClick={() => setSelectedEntry(null)}
@@ -254,7 +249,7 @@ const FindEntryPoint = () => {
                         <span className="font-sans text-[12px] font-bold tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity">Back</span>
                     </button>
 
-                    <div className="w-full grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-24 items-center relative z-10 mx-auto max-w-[1440px]">
+                    <div className="w-full grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-24 items-start relative z-10 mx-auto max-w-[1440px]">
                         
                         {/* Left Content Area */}
                         <div className="flex flex-col text-left text-white w-full pr-0 lg:pr-10">
@@ -262,7 +257,7 @@ const FindEntryPoint = () => {
                                 <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-white inline-block"></span>
                                 IF YOU ARE..
                             </span>
-                            <h3 className="font-serif text-[36px] md:text-[58px] lg:text-[72px] mb-8 md:mb-20 font-normal text-white leading-[1.05] detail-reveal">
+                            <h3 className="font-serif text-[36px] md:text-[52px] lg:text-[68px] mb-10 md:mb-16 font-normal text-white leading-[1.05] detail-reveal">
                                 {entryPoints.find(e => e.id === selectedEntry)?.content.title}
                             </h3>
 
@@ -271,7 +266,7 @@ const FindEntryPoint = () => {
                                     <div key={idx} className="flex flex-col transition-all group detail-reveal">
                                         <div 
                                             onClick={() => {/* If needed activate opt */}}
-                                            className={`flex justify-between items-center font-sans text-[16px] md:text-[23px] font-normal py-5 md:py-8 border-b border-white/[0.08] ${opt.isActive ? 'text-white border-transparent' : 'text-white/60 hover:text-white'}`}>
+                                            className={`flex justify-between items-center font-sans text-[16px] md:text-[22px] font-normal py-6 md:py-10 border-b border-white/20 ${opt.isActive ? 'text-white border-transparent' : 'text-white/70 hover:text-white'}`}>
                                             <span className="max-w-[85%] leading-[1.4] tracking-tight">{opt.label}</span>
                                             {!opt.isActive && <ChevronRight size={20} md:size={24} strokeWidth={1} className="text-white/30 group-hover:text-white/70 transition-colors" />}
                                         </div>
@@ -288,14 +283,15 @@ const FindEntryPoint = () => {
                         </div>
 
                         {/* Right Detail Icon */}
-                        <div className="flex justify-center items-center h-full text-white w-full pt-10 lg:pt-0 pointer-events-none select-none detail-icon-reveal">
+                        {/* Right Detail Icon */}
+                        <div className={`flex justify-center items-start h-auto text-white w-full ${selectedEntry === 'organization' ? 'lg:pt-12' : 'pt-10 lg:pt-0'} pointer-events-none select-none detail-icon-reveal opacity-50`}>
                             {selectedEntry === 'organization' && (
                                 <div className="w-full max-w-[280px] md:max-w-[340px] lg:max-w-none">
-                                    <ThreeUsersIcon size={iconSize} strokeWidth={1} className="opacity-100 drop-shadow-[0_0_80px_rgba(0,0,0,0.6)] w-full h-auto" />
+                                    <ThreeUsersIcon size={iconSize} strokeWidth={1} className="drop-shadow-[0_0_80px_rgba(0,0,0,0.6)] w-full h-auto" />
                                 </div>
                             )}
-                            {selectedEntry === 'individual' && <User size={iconSize} strokeWidth={1} className="opacity-100 drop-shadow-[0_0_80px_rgba(0,0,0,0.6)]" />}
-                            {selectedEntry === 'researcher' && <BookOpen size={iconSize} strokeWidth={1} className="opacity-100 drop-shadow-[0_0_80px_rgba(0,0,0,0.6)]" />}
+                            {selectedEntry === 'individual' && <User size={iconSize} strokeWidth={1} className="drop-shadow-[0_0_80px_rgba(0,0,0,0.6)]" />}
+                            {selectedEntry === 'researcher' && <BookOpen size={iconSize} strokeWidth={1} className="drop-shadow-[0_0_80px_rgba(0,0,0,0.6)]" />}
                         </div>
                     </div>
                 </div>

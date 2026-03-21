@@ -10,6 +10,8 @@ import EcosystemPage from './Pages/EcosystemPage';
 import CoursesPage from './Pages/CoursesPage';
 import BlogsPage from './Pages/BlogsPage';
 import ContactPage from './Pages/ContactPage';
+import PrivacyPolicyPage from './Pages/PrivacyPolicyPage';
+import TermsAndServicesPage from './Pages/TermsAndServicesPage';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-of-service" element={<TermsAndServicesPage />} />
         </Routes>
       </div>
       <Footer />

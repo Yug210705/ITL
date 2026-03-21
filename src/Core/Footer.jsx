@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Youtube, Linkedin } from 'lucide-react';
 
 const Footer = () => {
@@ -94,9 +95,9 @@ const Footer = () => {
                     <div className="flex flex-wrap gap-4 items-center justify-center md:justify-start">
                         <span>© 2025 Institute for Trusted Leadership. All rights reserved.</span>
                         <span className="hidden md:inline">|</span>
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                        <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <span className="hidden md:inline">|</span>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                        <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
                         <span className="hidden md:inline">|</span>
                         <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
                     </div>

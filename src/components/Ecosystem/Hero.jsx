@@ -9,10 +9,10 @@ const Hero = () => {
             gsap.from(".hero-reveal", {
                 y: 50,
                 opacity: 0,
-                duration: 1.2,
-                stagger: 0.2,
-                ease: "power3.out",
-                delay: 0.5
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power2.out",
+                delay: 0.2
             });
         }, heroRef);
         return () => ctx.revert();
@@ -22,7 +22,7 @@ const Hero = () => {
         <section ref={heroRef} className="relative w-full min-h-[65vh] md:min-h-screen flex flex-col pt-28 pb-12 md:pb-0 md:pt-32 px-6 md:px-12 lg:px-20 bg-transparent">
             <div className="mx-auto flex flex-col flex-grow relative z-10 w-full max-w-[1400px]">
                 
-                <div className="flex flex-col lg:grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-8 w-full flex-grow py-8 md:py-16 justify-center lg:justify-start">
+                <div className="flex flex-col lg:grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-8 w-full flex-grow py-8 md:py-20 justify-center">
                     
                     <div className="flex flex-col justify-start text-left hero-reveal lg:-mt-12">
                         <span className="flex items-center gap-3 font-sans text-[10px] md:text-xs font-semibold tracking-[0.25em] uppercase text-white/80">
@@ -36,7 +36,7 @@ const Hero = () => {
                         </h1>
                     </div>
 
-                    <div className="flex flex-col justify-start lg:justify-end lg:pb-24 lg:translate-y-12 hero-reveal mt-6 lg:mt-0">
+                    <div className="flex flex-col justify-start lg:justify-end lg:pb-32 lg:translate-y-20 hero-reveal mt-10 lg:mt-0">
                         <p className="font-sans text-base leading-relaxed text-white max-w-[560px] lg:text-right lg:ml-auto">
                             The Institute of Trusted Leadership operates through an integrated ecosystem of specialized divisions, each addressing different aspects of leadership development and organizational transformation.
                         </p>
