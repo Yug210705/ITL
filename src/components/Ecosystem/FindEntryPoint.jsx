@@ -140,6 +140,7 @@ const FindEntryPoint = () => {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: "top 90%",
+                    once: true // Fix jitter by only running once
                 }
             });
         }, containerRef);

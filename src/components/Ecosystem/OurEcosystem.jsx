@@ -118,6 +118,7 @@ const OurEcosystem = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 95%",
+          once: true // Only reveal once to prevent jitter on state changes
         }
       });
 
@@ -247,12 +248,12 @@ const OurEcosystem = () => {
           {/* TABS + CONTENT - Pauses auto-scroll on hover */}
           <div ref={contentRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className="w-full px-0 md:px-12 lg:px-20 pb-16 mt-6 md:mt-10 reveal-up">
               <div className="flex flex-col w-full max-w-[1440px] mx-auto">
-                  <div className="flex w-full overflow-x-auto no-scrollbar border-b border-[#252525] relative">
+                  <div className="flex w-full overflow-x-auto no-scrollbar border-b border-[#252525] relative will-change-scroll">
                       {tabsData.map((tab) => {
                           const isActive = activeTab === tab.id;
                           return (
                               <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                                  className={`flex-1 min-w-[160px] md:min-w-0 flex items-center justify-center h-[64px] transition-all duration-300 relative ${isActive ? 'bg-[#161616]' : 'bg-transparent'}`} id={`tab-${tab.id}`}>
+                                  className={`flex-1 min-w-[160px] md:min-w-0 flex items-center justify-center h-[64px] transition-all duration-300 relative will-change-transform ${isActive ? 'bg-[#161616]' : 'bg-transparent'}`} id={`tab-${tab.id}`}>
                                   <span className={`font-sans text-[10px] md:text-[11px] tracking-[0.2em] font-bold uppercase transition-colors ${isActive ? 'text-white' : 'text-[#444]'}`}>
                                       {tab.label}
                                   </span>
