@@ -74,16 +74,18 @@ const OurEcosystem = () => {
   
   const [isHovered, setIsHovered] = useState(false);
   
-  // Keep active tab in view for  // Keep active tab in view for mobile - REMOVED scrollIntoView to prevent page jumping
+  // Keep active tab in view for mobile - Optimized to prevent vibration
   useEffect(() => {
-    // We only scroll the tab bar horizontally, not the whole page
     const activeTabElement = document.getElementById(`tab-${activeTab}`);
     const tabContainer = activeTabElement?.parentElement;
     if (activeTabElement && tabContainer) {
-      const scrollLeft = activeTabElement.offsetLeft - (tabContainer.offsetWidth / 2) + (activeTabElement.offsetWidth / 2);
-      tabContainer.scrollTo({
-        left: scrollLeft,
-        behavior: 'smooth'
+      const scrollLeftPos = activeTabElement.offsetLeft - (tabContainer.offsetWidth / 2) + (activeTabElement.offsetWidth / 2);
+      
+      // Use GSAP for smoother, more stable horizontal scrolling without page vibration
+      gsap.to(tabContainer, {
+        scrollLeft: scrollLeftPos,
+        duration: 0.6,
+        ease: "power2.out"
       });
     }
   }, [activeTab]);
@@ -245,7 +247,7 @@ const OurEcosystem = () => {
           {/* TABS + CONTENT - Pauses auto-scroll on hover */}
           <div ref={contentRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className="w-full px-0 md:px-12 lg:px-20 pb-16 mt-6 md:mt-10 reveal-up">
               <div className="flex flex-col w-full max-w-[1440px] mx-auto">
-                  <div className="flex w-full overflow-x-auto no-scrollbar border-b border-[#252525]">
+                  <div className="flex w-full overflow-x-auto no-scrollbar border-b border-[#252525] relative">
                       {tabsData.map((tab) => {
                           const isActive = activeTab === tab.id;
                           return (
