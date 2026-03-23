@@ -269,7 +269,7 @@ const OurEcosystem = () => {
 
                   <div className="w-full bg-[#0f0f0f] border-x border-b border-[#252525] rounded-b-[24px] relative overflow-hidden">
                       <div className="absolute bottom-[-40px] left-[-20px] w-[300px] md:w-[400px] h-[200px] md:h-[280px] bg-[#006AFF] opacity-[0.08] blur-[80px] pointer-events-none rounded-full"></div>
-                      <div className="flex flex-col lg:flex-row min-h-[420px]">
+                      <div className="flex flex-col lg:flex-row min-h-[580px] md:min-h-[500px] lg:min-h-[420px]">
                           <div className="w-full lg:w-[42%] flex flex-col justify-center relative z-10 p-5 pt-10 md:p-12 lg:p-14 lg:pl-16">
                               <div className="flex items-center gap-2 mb-5 tab-content-reveal">
                                   <span className="w-2 h-[1px] bg-[#006AFF] inline-block flex-shrink-0"></span>
