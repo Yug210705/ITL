@@ -24,7 +24,7 @@ const InfoSlider = () => {
             tl: { label: "MEET OUR FOUNDER", title: "Leslie Martinich", isText: true },
             tr: { type: "image", src: "/images/Leslie.webp", alt: "Leslie Martinich" },
             bl: { text: "Leslie Martinich is a leadership expert with 20+ years of experience who founded the Institute of Trusted Leadership to address the global crisis of trust in organizations. \n\nThrough evidence-based, practical approaches, her work develops leaders, transforms cultures, and scales trusted leadership worldwide.", isText: true },
-            br: { type: "link", text: "Meet Leslie", href: "#" }
+            br: { type: "link", text: "Meet Leslie", href: "https://calendly.com/lmartinich/" }
         },
         {
             id: 1,
@@ -141,7 +141,12 @@ const InfoSlider = () => {
                                 </p>
                             )}
                             {slide.br.type === 'link' && (
-                                <a href={slide.br.href} className="group flex items-center gap-2 text-2xl font-serif cursor-pointer">
+                                <a
+                                    href={slide.br.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group flex items-center gap-2 text-2xl font-serif cursor-pointer"
+                                >
                                     {slide.br.text}
                                     <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M37.5 12V31.5C37.5 31.8978 37.3419 32.2794 37.0606 32.5607C36.7793 32.842 36.3978 33 36 33C35.6022 33 35.2206 32.842 34.9393 32.5607C34.658 32.2794 34.5 31.8978 34.5 31.5V15.6206L13.0612 37.0613C12.7798 37.3427 12.398 37.5008 12 37.5008C11.6019 37.5008 11.2202 37.3427 10.9387 37.0613C10.6573 36.7798 10.4991 36.398 10.4991 36C10.4991 35.602 10.6573 35.2202 10.9387 34.9388L32.3794 13.5H16.5C16.1022 13.5 15.7206 13.342 15.4393 13.0607C15.158 12.7794 15 12.3978 15 12C15 11.6022 15.158 11.2206 15.4393 10.9393C15.7206 10.658 16.1022 10.5 16.5 10.5H36C36.3978 10.5 36.7793 10.658 37.0606 10.9393C37.3419 11.2206 37.5 11.6022 37.5 12Z" fill="white" />
@@ -287,7 +292,12 @@ const InfoSlider = () => {
                                 </p>
                             )}
                             {slides[activeSlide].br.type === 'link' && (
-                                <a href={slides[activeSlide].br.href} className="group flex items-center gap-2 text-5xl font-serif cursor-pointer">
+                                <a
+                                    href={slides[activeSlide].br.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group flex items-center gap-2 text-5xl font-serif cursor-pointer"
+                                >
                                     {slides[activeSlide].br.text}
                                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12">
                                         <path d="M37.5 12V31.5C37.5 31.8978 37.3419 32.2794 37.0606 32.5607C36.7793 32.842 36.3978 33 36 33C35.6022 33 35.2206 32.842 34.9393 32.5607C34.658 32.2794 34.5 31.8978 34.5 31.5V15.6206L13.0612 37.0613C12.7798 37.3427 12.398 37.5008 12 37.5008C11.6019 37.5008 11.2202 37.3427 10.9387 37.0613C10.6573 36.7798 10.4991 36.398 10.4991 36C10.4991 35.602 10.6573 35.2202 10.9387 34.9388L32.3794 13.5H16.5C16.1022 13.5 15.7206 13.342 15.4393 13.0607C15.158 12.7794 15 12.3978 15 12C15 11.6022 15.158 11.2206 15.4393 10.9393C15.7206 10.658 16.1022 10.5 16.5 10.5H36C36.3978 10.5 36.7793 10.658 37.0606 10.9393C37.3419 11.2206 37.5 11.6022 37.5 12Z" fill="white" />
