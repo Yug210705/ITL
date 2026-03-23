@@ -25,12 +25,23 @@ const Navbar = () => {
                     <ul className="flex gap-8 lg:gap-10">
                         {['About Institute', 'Ecosystem', 'Courses', 'Blogs', 'Contact'].map((item) => (
                             <li key={item}>
-                                <Link
-                                    to={`/${item.toLowerCase().replace(' ', '-')}`}
-                                    className="font-sans text-sm text-white hover:text-white transition-colors duration-300 font-normal tracking-wide"
-                                >
-                                    {item}
-                                </Link>
+                                {item === 'Contact' ? (
+                                    <a
+                                        href="https://calendly.com/lmartinich/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="font-sans text-sm text-white hover:text-white transition-colors duration-300 font-normal tracking-wide"
+                                    >
+                                        {item}
+                                    </a>
+                                ) : (
+                                    <Link
+                                        to={`/${item.toLowerCase().replace(' ', '-')}`}
+                                        className="font-sans text-sm text-white hover:text-white transition-colors duration-300 font-normal tracking-wide"
+                                    >
+                                        {item}
+                                    </Link>
+                                )}
                             </li>
                         ))}
                     </ul>
@@ -63,16 +74,31 @@ const Navbar = () => {
                                         transitionDelay: isOpen ? `${150 + i * 100}ms` : '0ms'
                                     }}
                                 >
-                                    <Link
-                                        to={`/${item.toLowerCase().replace(' ', '-')}`}
-                                        className="font-serif text-[38px] min-[380px]:text-[46px] md:text-6xl text-white tracking-wide hover:italic transition-all duration-300 block group"
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        <div className="flex items-center gap-4 md:gap-6">
-                                            <span className="text-xs md:text-sm font-sans font-medium text-white/30 group-hover:text-white/60 transition-colors w-6">0{i + 1}</span>
-                                            {item}
-                                        </div>
-                                    </Link>
+                                    {item === 'Contact' ? (
+                                        <a
+                                            href="https://calendly.com/lmartinich/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="font-serif text-[38px] min-[380px]:text-[46px] md:text-6xl text-white tracking-wide hover:italic transition-all duration-300 block group"
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            <div className="flex items-center gap-4 md:gap-6">
+                                                <span className="text-xs md:text-sm font-sans font-medium text-white/30 group-hover:text-white/60 transition-colors w-6">0{i + 1}</span>
+                                                {item}
+                                            </div>
+                                        </a>
+                                    ) : (
+                                            <Link
+                                                to={`/${item.toLowerCase().replace(' ', '-')}`}
+                                                className="font-serif text-[38px] min-[380px]:text-[46px] md:text-6xl text-white tracking-wide hover:italic transition-all duration-300 block group"
+                                                onClick={() => setIsOpen(false)}
+                                            >
+                                                <div className="flex items-center gap-4 md:gap-6">
+                                                    <span className="text-xs md:text-sm font-sans font-medium text-white/30 group-hover:text-white/60 transition-colors w-6">0{i + 1}</span>
+                                                    {item}
+                                                </div>
+                                            </Link>
+                                        )}
                                 </li>
                             ))}
                         </ul>

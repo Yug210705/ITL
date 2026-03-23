@@ -16,7 +16,7 @@ const Footer = () => {
                     </svg>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 border-t border-x border-[#FFFFFF1A] transform-gpu backdrop-blur-3xl">
-                    <a href="#" className="group flex items-center justify-between py-6 md:pr-8 border-b md:border-b-0 md:border-r border-[#FFFFFF1A] px-6">
+                    <a href="https://www.youtube.com/@InstituteForTrustedLeadership" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between py-6 md:pr-8 border-b md:border-b-0 md:border-r border-[#FFFFFF1A] px-6">
                         <div className="flex items-center gap-4">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.2" d="M21.2428 6.70602C21.1851 6.47477 21.0731 6.26059 20.9161 6.08126C20.7591 5.90192 20.5616 5.76257 20.34 5.67477C17.2013 4.46727 12 4.50009 12 4.50009C12 4.50009 6.79875 4.46727 3.65625 5.67946C3.43466 5.76726 3.23718 5.9066 3.08017 6.08594C2.92317 6.26528 2.81116 6.47945 2.75344 6.71071C2.53781 7.55071 2.25 9.19602 2.25 12.0001C2.25 14.8041 2.53781 16.4495 2.75719 17.2941C2.8152 17.5242 2.92694 17.7371 3.08322 17.9156C3.23951 18.094 3.43589 18.2329 3.65625 18.3207C6.79875 19.5329 12 19.5001 12 19.5001C12 19.5001 17.2013 19.5329 20.3438 18.3207C20.5648 18.2334 20.7619 18.0947 20.9189 17.9163C21.0759 17.7378 21.1882 17.5246 21.2466 17.2941C21.4659 16.4504 21.7537 14.8041 21.7537 12.0001C21.7537 9.19602 21.4622 7.55071 21.2428 6.70602ZM10.5 15.0001V9.00009L15 12.0001L10.5 15.0001Z" fill="white" />
@@ -27,7 +27,7 @@ const Footer = () => {
                         <ArrowRight className="w-6 h-6 text-white" />
                     </a>
 
-                    <a href="#" className="group flex items-center justify-between py-6 md:pl-8 px-6">
+                    <a href="https://www.linkedin.com/company/institute-for-trusted-leadership/" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between py-6 md:pl-8 px-6">
                         <div className="flex items-center gap-4">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.2" d="M21 3.75V20.25C21 20.4489 20.921 20.6397 20.7803 20.7803C20.6397 20.921 20.4489 21 20.25 21H3.75C3.55109 21 3.36032 20.921 3.21967 20.7803C3.07902 20.6397 3 20.4489 3 20.25V3.75C3 3.55109 3.07902 3.36032 3.21967 3.21967C3.36032 3.07902 3.55109 3 3.75 3H20.25C20.4489 3 20.6397 3.07902 20.7803 3.21967C20.921 3.36032 21 3.55109 21 3.75Z" fill="white" />
@@ -43,11 +43,25 @@ const Footer = () => {
                     <div className="p-8 md:border-r border-[#FFFFFF1A]">
                         <h3 className="font-serif italic text-xl mb-6 text-white">Ecosystem</h3>
                         <ul className="space-y-2">
-                            {['LUCA the Leader', 'Martinich Consulting', 'Martinich Institute', 'Martinich R&D', 'CSR Partnerships'].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="text-[#525252] hover:text-white transition-colors text-sm font-medium">{item}</a>
-                                </li>
-                            ))}
+                            {['LUCA the Leader', 'Martinich Consulting', 'Martinich Institute', 'Martinich R&D', 'CSR Partnerships'].map((item) => {
+                                const isLuca = item === 'LUCA the Leader';
+                                const isConsulting = item === 'Martinich Consulting';
+                                const href = isLuca ? 'https://lucatheleader.com/' : (isConsulting ? 'https://highperforming-teams.com/' : '#');
+                                const isExternal = isLuca || isConsulting;
+
+                                return (
+                                    <li key={item}>
+                                        <a 
+                                            href={href} 
+                                            target={isExternal ? '_blank' : undefined}
+                                            rel={isExternal ? 'noopener noreferrer' : undefined}
+                                            className="text-[#525252] hover:text-white transition-colors text-sm font-medium"
+                                        >
+                                            {item}
+                                        </a>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
                     <div className="p-8">
@@ -55,7 +69,14 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {['Leadership Insights (Blog)', 'Whitepapers & Reports', 'Public Lectures', 'Media Kit', 'Contact Us'].map((item) => (
                                 <li key={item}>
-                                    <a href="#" className="text-[#525252] hover:text-white transition-colors text-sm font-medium">{item}</a>
+                                    <a 
+                                        href={item === 'Contact Us' ? 'https://calendly.com/lmartinich/' : '#'} 
+                                        target={item === 'Contact Us' ? '_blank' : undefined}
+                                        rel={item === 'Contact Us' ? 'noopener noreferrer' : undefined}
+                                        className="text-[#525252] hover:text-white transition-colors text-sm font-medium"
+                                    >
+                                        {item}
+                                    </a>
                                 </li>
                             ))}
                         </ul>
@@ -98,8 +119,6 @@ const Footer = () => {
                         <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <span className="hidden md:inline">|</span>
                         <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
-                        <span className="hidden md:inline">|</span>
-                        <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
                     </div>
                     <div className="flex gap-4">
                         <span>Founded by Leslie Martinich</span>

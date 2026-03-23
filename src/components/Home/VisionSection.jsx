@@ -17,7 +17,8 @@ const VisionSection = () => {
             title: "LUCA The Leader",
             subtitle: "Where Leadership Awareness Begins",
             description: "Our flagship CSR initiative bringing trusted leadership awareness to communities, organizations, and emerging leaders. Start your journey with free resources, assessments, and community connection.",
-            image: "/images/lucaweb.webp"
+            image: "/images/lucaweb.webp",
+            href: "https://lucatheleader.com/"
         },
         {
             id: 2,
@@ -25,7 +26,8 @@ const VisionSection = () => {
             title: "MARTINICH CONSULTING",
             subtitle: "Strategic Leadership Partnerships",
             description: "Partnering with organizations to build high-trust cultures and develop transformative leaders through customized consulting and coaching solutions.",
-            image: "/images/lucaweb.webp"
+            image: "/images/lucaweb.webp",
+            href: "https://highperforming-teams.com/"
         },
         {
             id: 3,
@@ -94,29 +96,29 @@ const VisionSection = () => {
                                 <span className="w-1 md:w-1.5 h-1 md:h-1.5 bg-white box-border" />
                                 {card.label}
                             </div>
-                            <div className="w-full h-full flex flex-col">
-                                <div className="flex-grow rounded-xl mb-4 md:mb-6 relative overflow-hidden h-40 md:h-auto">
-                                    <img
-                                        src={card.image}
-                                        alt={card.title}
-                                        className="w-full h-full object-cover transition-transform duration-700"
-                                    />
-                                </div>
-                                <div className="flex flex-col md:flex-row justify-between items-start gap-4">
-                                    <div className="flex-1">
-                                        <h3 className="font-serif text-2xl md:text-4xl text-white mb-1">{card.title}</h3>
-                                        <p className="font-serif text-white/80 text-base md:text-xl mb-3 leading-tight">{card.subtitle}</p>
-                                        <p className="font-sans text-white/50 text-xs md:text-sm leading-relaxed max-w-xl">
-                                            {card.description}
-                                        </p>
+                                <div className="w-full h-full flex flex-col cursor-pointer" onClick={() => card.href && window.open(card.href, '_blank')}>
+                                    <div className="flex-grow rounded-xl mb-4 md:mb-6 relative overflow-hidden h-40 md:h-auto">
+                                        <img
+                                            src={card.image}
+                                            alt={card.title}
+                                            className="w-full h-full object-cover transition-transform duration-700"
+                                        />
                                     </div>
-                                    <div className="hidden md:block">
-                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M25 8V21C25 21.2652 24.8947 21.5196 24.7071 21.7071C24.5196 21.8946 24.2652 22 24 22C23.7348 22 23.4804 21.8946 23.2929 21.7071C23.1054 21.5196 23 21.2652 23 21V10.4138L8.70751 24.7075C8.51987 24.8951 8.26537 25.0006 8.00001 25.0006C7.73464 25.0006 7.48015 24.8951 7.29251 24.7075C7.10487 24.5199 6.99945 24.2654 6.99945 24C6.99945 23.7346 7.10487 23.4801 7.29251 23.2925L21.5863 9H11C10.7348 9 10.4804 8.89464 10.2929 8.70711C10.1054 8.51957 10 8.26522 10 8C10 7.73478 10.1054 7.48043 10.2929 7.29289C10.4804 7.10536 10.7348 7 11 7H24C24.2652 7 24.5196 7.10536 24.7071 7.29289C24.8947 7.48043 25 7.73478 25 8Z" fill="white" />
-                                        </svg>
+                                    <div className="flex flex-col md:flex-row justify-between items-start gap-4">
+                                        <div className="flex-1">
+                                            <h3 className="font-serif text-2xl md:text-4xl text-white mb-1">{card.title}</h3>
+                                            <p className="font-serif text-white/80 text-base md:text-xl mb-3 leading-tight">{card.subtitle}</p>
+                                            <p className="font-sans text-white/50 text-xs md:text-sm leading-relaxed max-w-xl">
+                                                {card.description}
+                                            </p>
+                                        </div>
+                                        <div className="hidden md:block">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                                                <path d="M25 8V21C25 21.2652 24.8947 21.5196 24.7071 21.7071C24.5196 21.8946 24.2652 22 24 22C23.7348 22 23.4804 21.8946 23.2929 21.7071C23.1054 21.5196 23 21.2652 23 21V10.4138L8.70751 24.7075C8.51987 24.8951 8.26537 25.0006 8.00001 25.0006C7.73464 25.0006 7.48015 24.8951 7.29251 24.7075C7.10487 24.5199 6.99945 24.2654 6.99945 24C6.99945 23.7346 7.10487 23.4801 7.29251 23.2925L21.5863 9H11C10.7348 9 10.4804 8.89464 10.2929 8.70711C10.1054 8.51957 10 8.26522 10 8C10 7.73478 10.1054 7.48043 10.2929 7.29289C10.4804 7.10536 10.7348 7 11 7H24C24.2652 7 24.5196 7.10536 24.7071 7.29289C24.8947 7.48043 25 7.73478 25 8Z" fill="white" />
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
 
                         {/* Collapsed State */}

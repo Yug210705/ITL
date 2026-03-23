@@ -45,7 +45,7 @@ const JourneySection = () => {
             content: (
                 <ul className="font-sans text-[#FFFFFF85] text-base font-light leading-relaxed space-y-2">
                     <li>• Infrastructure deployed</li>
-                    <li>• LUCA the Leader launches (CSR)</li>
+                    <li>• <a href="https://lucatheleader.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20">LUCA the Leader launches (CSR)</a></li>
                     <li>• R&D and Consulting activated</li>
                 </ul>
             ),

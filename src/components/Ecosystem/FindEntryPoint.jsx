@@ -18,6 +18,7 @@ const entryPoints = [
                 {
                     label: 'You want to assess your current leadership culture',
                     action: 'Start with Martinich Consulting →',
+                    actionHref: 'https://highperforming-teams.com/',
                     isActive: true,
                 },
                 {
@@ -45,6 +46,7 @@ const entryPoints = [
                 {
                     label: 'You want to develop your personal leadership skills',
                     action: 'Start with LUCA The Leader →',
+                    actionHref: 'https://lucatheleader.com/',
                     isActive: true,
                 },
                 {
@@ -272,7 +274,9 @@ const FindEntryPoint = () => {
                                         </div>
                                         {opt.isActive && (
                                             <div className="pb-8 md:pb-12 border-b border-white/[0.08]">
-                                                <button className="bg-[#1a1a1e] hover:bg-[#25252a] text-[#f8f8f8] text-[12px] md:text-[14px] font-sans font-bold py-3 md:py-4 px-6 md:px-8 rounded-[4px] transition-all flex items-center tracking-[0.02em] mt-6 w-fit border border-white/5 shadow-2xl">
+                                                <button 
+                                                    onClick={() => opt.actionHref && window.open(opt.actionHref, '_blank')}
+                                                    className="bg-[#1a1a1e] hover:bg-[#25252a] text-[#f8f8f8] text-[12px] md:text-[14px] font-sans font-bold py-3 md:py-4 px-6 md:px-8 rounded-[4px] transition-all flex items-center tracking-[0.02em] mt-6 w-fit border border-white/5 shadow-2xl">
                                                     {opt.action}
                                                 </button>
                                             </div>

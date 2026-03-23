@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -17,7 +17,8 @@ const tabsData = [
       ],
       btnLabel: 'Visit Martinich Consulting →',
       badge: 'PREMIUM ADVISORY',
-      mockupImg: '/images/martinich_mockup.png'
+      mockupImg: '/images/martinich_mockup.png',
+      btnHref: 'https://highperforming-teams.com/'
   },
   {
       id: 'luca-leader',
@@ -31,7 +32,8 @@ const tabsData = [
       ],
       btnLabel: 'Watch the Series →',
       badge: 'OPEN TO ALL',
-      mockupImg: '/images/luca_mockup.png'
+      mockupImg: '/images/luca_mockup.png',
+      btnHref: 'https://lucatheleader.com/'
   },
   {
       id: 'martinich-courses',
@@ -45,7 +47,8 @@ const tabsData = [
       ],
       btnLabel: 'View Courses →',
       badge: 'ENROLLING NOW',
-      mockupImg: '/images/lucaweb.webp'
+      mockupImg: '/images/lucaweb.webp',
+      btnHref: '#'
   },
   {
       id: 'martinich-rad',
@@ -59,7 +62,8 @@ const tabsData = [
       ],
       btnLabel: 'Explore R&D →',
       badge: 'LATEST INSIGHTS',
-      mockupImg: '/images/lucaweb2.webp'
+      mockupImg: '/images/lucaweb2.webp',
+      btnHref: '#'
   }
 ];
 
@@ -68,9 +72,35 @@ const OurEcosystem = () => {
   const activeData = tabsData.find(t => t.id === activeTab);
   const activeIndex = tabsData.findIndex(t => t.id === activeTab);
   
+  const [isHovered, setIsHovered] = useState(false);
+  
+  // Keep active tab in view for mobile
+  useEffect(() => {
+    const activeTabElement = document.getElementById(`tab-${activeTab}`);
+    if (activeTabElement) {
+      activeTabElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  }, [activeTab]);
+  
   const sectionRef = useRef(null);
   const graphicRef = useRef(null);
   const contentRef = useRef(null);
+
+  // AUTO-SCROLL LOGIC - Cycles every 3.5 seconds, pauses on hover
+  useEffect(() => {
+    if (isHovered) return; // Pause on hover
+
+    const timer = setInterval(() => {
+      const nextIndex = (activeIndex + 1) % tabsData.length;
+      setActiveTab(tabsData[nextIndex].id);
+    }, 3500); 
+
+    return () => clearInterval(timer);
+  }, [activeIndex, isHovered]);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -161,13 +191,13 @@ const OurEcosystem = () => {
               </div>
 
               {/* Ecosystem Graphic Wrapper */}
-              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.32] min-[370px]:scale-[0.38] sm:scale-[0.45] md:scale-[0.6] lg:scale-100 top-[55%] lg:top-[45%] left-1/2 lg:left-[88%] -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 transition-all duration-700">
+              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.55] min-[370px]:scale-[0.62] sm:scale-[0.7] md:scale-[0.85] lg:scale-100 top-[55%] lg:top-[45%] left-1/2 lg:left-[88%] -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 transition-all duration-700">
                   
                   {/* Outer Orbit (Radius 460, theta=225) */}
                   <div className="absolute rounded-full border border-white/5 orbit-outer"
                       style={{ width: '920px', height: '920px', top: '-460px', left: '-460px' }}>
-                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4] node-content"
-                          style={{ width: '120px', height: '120px', top: '75px', left: '75px', boxShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
+                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[22px] lg:text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4] node-content w-[180px] lg:w-[120px] h-[180px] lg:h-[120px] top-[75px] left-[75px]"
+                          style={{ boxShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
                           <span>Martinich<br />Consulting</span>
                       </div>
                   </div>
@@ -175,8 +205,8 @@ const OurEcosystem = () => {
                   {/* Mid Orbit (Radius 320, theta=180) */}
                   <div className="absolute rounded-full border border-white/5 orbit-mid"
                       style={{ width: '640px', height: '640px', top: '-320px', left: '-320px' }}>
-                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4] node-content"
-                          style={{ width: '110px', height: '110px', top: '265px', left: '-55px', boxShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
+                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[22px] lg:text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4] node-content w-[170px] lg:w-[110px] h-[170px] lg:h-[110px] top-[235px] lg:top-[265px] left-[-85px] lg:left-[-55px]"
+                          style={{ boxShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
                           <span>LUCA: The<br />Leader</span>
                       </div>
                   </div>
@@ -184,8 +214,8 @@ const OurEcosystem = () => {
                   {/* Inner Orbit (Radius 190, theta=135) */}
                   <div className="absolute rounded-full border border-white/5 orbit-inner z-30"
                       style={{ width: '380px', height: '380px', top: '-190px', left: '-190px' }}>
-                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4] node-content"
-                          style={{ width: '100px', height: '100px', top: '330px', left: '140px', boxShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
+                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[22px] lg:text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4] node-content w-[160px] lg:w-[100px] h-[160px] lg:h-[100px] top-[300px] lg:top-[330px] left-[120px] lg:left-[140px]"
+                          style={{ boxShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
                           <span>Martinich<br />R&D</span>
                       </div>
                   </div>
@@ -203,8 +233,8 @@ const OurEcosystem = () => {
               </div>
           </div>
 
-          {/* TABS + CONTENT */}
-          <div ref={contentRef} className="w-full px-4 md:px-12 lg:px-20 pb-16 mt-6 md:mt-10 reveal-up">
+          {/* TABS + CONTENT - Pauses auto-scroll on hover */}
+          <div ref={contentRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className="w-full px-4 md:px-12 lg:px-20 pb-16 mt-6 md:mt-10 reveal-up">
               <div className="flex flex-col w-full max-w-[1440px] mx-auto">
                   <div className="flex w-full rounded-t-[20px] border border-[#252525] border-b-0 overflow-x-auto no-scrollbar">
                       {tabsData.map((tab) => {
@@ -238,7 +268,7 @@ const OurEcosystem = () => {
                                   ))}
                               </ul>
                               <div className="tab-content-reveal">
-                                  <button onClick={() => window.open('#', '_blank')} className="bg-[#0055FF] hover:bg-[#0044ee] transition-colors text-white text-[12px] font-medium py-[10px] px-6 rounded-md tracking-wide w-full md:w-fit">{activeData.btnLabel}</button>
+                                  <button onClick={() => window.open(activeData.btnHref, '_blank')} className="bg-[#0055FF] hover:bg-[#0044ee] transition-colors text-white text-[12px] font-medium py-[10px] px-6 rounded-md tracking-wide w-full md:w-fit">{activeData.btnLabel}</button>
                               </div>
                           </div>
 
