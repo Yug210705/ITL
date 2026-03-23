@@ -178,18 +178,14 @@ const OurEcosystem = () => {
   return (
       <section ref={sectionRef} className="w-full relative pt-4 px-4 md:px-0 bg-transparent">
 
-          <div className="relative w-full h-[600px] md:h-[800px] lg:h-[950px] overflow-hidden reveal-up">
+          <div className="relative w-full h-[650px] md:h-[800px] lg:h-[950px] overflow-hidden reveal-up">
               
               {/* Refined Background Glows */}
               <div className="absolute inset-0 pointer-events-none z-0">
-                  {/* Subtle centered corona */}
-                  <div className="absolute top-[62%] lg:top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[1000px] h-[600px] md:h-[1000px] bg-gradient-to-r from-[#0033ff15] via-[#0052ff10] to-[#00aaff05] blur-[100px] rounded-full"></div>
-                  {/* Pulsating corner accents */}
-                  <div className="absolute -top-[10%] -left-[10%] w-[500px] h-[500px] bg-[#001Aff08] blur-[120px] rounded-full animate-pulse-slow"></div>
-                  <div className="absolute -bottom-[20%] -right-[10%] w-[600px] h-[600px] bg-[#0052ff05] blur-[110px] rounded-full animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+                  <div className="absolute top-[68%] lg:top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[1000px] h-[500px] md:h-[1000px] bg-[#0052ff12] blur-[100px] rounded-full animate-pulse-slow"></div>
               </div>
               
-              <div className="absolute left-1/2 -translate-x-1/2 top-10 md:top-14 text-center lg:left-0 lg:translate-x-0 lg:top-[45%] lg:-translate-y-1/2 lg:pl-16 lg:text-left z-10 w-full lg:w-auto px-6">
+              <div className="absolute left-1/2 -translate-x-1/2 top-10 md:top-14 text-center lg:left-0 lg:translate-x-0 lg:top-[45%] lg:-translate-y-1/2 lg:pl-16 lg:text-left z-20 w-full lg:w-auto px-6">
                   <div className="flex items-center justify-center lg:justify-start gap-2.5 mb-5">
                       <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-[#006AFF] rounded-full animate-pulse"></span>
                       <span className="font-sans text-[10px] md:text-[11px] font-extrabold tracking-[0.3em] uppercase text-white/40">
@@ -202,12 +198,12 @@ const OurEcosystem = () => {
               </div>
 
               {/* Ecosystem Graphic Wrapper */}
-              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.52] min-[400px]:scale-[0.58] sm:scale-[0.7] md:scale-[0.85] lg:scale-100 top-[62%] lg:top-[45%] left-1/2 lg:left-[88%] -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 transition-all duration-700">
+              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.36] min-[380px]:scale-[0.42] sm:scale-[0.7] md:scale-[0.85] lg:scale-100 top-[68%] lg:top-[45%] left-1/2 lg:left-[88%] -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 transition-all duration-700">
                   
                   {/* Outer Orbit (Radius 460) */}
                   <div className="absolute rounded-full border border-white/20 orbit-outer shadow-[0_0_50px_rgba(255,255,255,0.05)]"
                       style={{ width: '920px', height: '920px', top: '-460px', left: '-460px' }}>
-                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[16px] lg:text-[10px] text-white font-serif italic text-center leading-[1.3] node-content w-[150px] lg:w-[120px] h-[150px] lg:h-[120px] top-[100px] left-[100px] border border-white/30"
+                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[32px] lg:text-[10px] text-white font-serif italic text-center leading-[1.3] node-content w-[150px] lg:w-[120px] h-[150px] lg:h-[120px] top-[90px] left-[90px] border border-white/30"
                           style={{ boxShadow: '0 0 60px rgba(0,0,0,1), inset 0 0 20px rgba(255,255,255,0.1)' }}>
                           <span className="drop-shadow-lg">Martinich<br />Consulting</span>
                       </div>
@@ -216,7 +212,7 @@ const OurEcosystem = () => {
                   {/* Mid Orbit (Radius 320) */}
                   <div className="absolute rounded-full border border-white/20 orbit-mid shadow-[0_0_40px_rgba(255,255,255,0.05)]"
                       style={{ width: '640px', height: '640px', top: '-320px', left: '-320px' }}>
-                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[16px] lg:text-[10px] text-white font-serif italic text-center leading-[1.3] node-content w-[140px] lg:w-[110px] h-[140px] lg:h-[110px] top-[250px] lg:top-[265px] left-[-70px] lg:left-[-55px] border border-white/30"
+                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[32px] lg:text-[10px] text-white font-serif italic text-center leading-[1.3] node-content w-[140px] lg:w-[110px] h-[140px] lg:h-[110px] top-[250px] lg:top-[265px] left-[-70px] lg:left-[-55px] border border-white/30"
                           style={{ boxShadow: '0 0 60px rgba(0,0,0,1), inset 0 0 20px rgba(255,255,255,0.1)' }}>
                           <span className="drop-shadow-lg">LUCA: The<br />Leader</span>
                       </div>
@@ -225,7 +221,7 @@ const OurEcosystem = () => {
                   {/* Inner Orbit (Radius 190) */}
                   <div className="absolute rounded-full border border-white/20 orbit-inner z-30 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
                       style={{ width: '380px', height: '380px', top: '-190px', left: '-190px' }}>
-                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[15px] lg:text-[10px] text-white font-serif italic text-center leading-[1.3] node-content w-[130px] lg:w-[100px] h-[130px] lg:h-[100px] top-[300px] lg:top-[330px] left-[130px] lg:left-[140px] border border-white/30"
+                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[30px] lg:text-[10px] text-white font-serif italic text-center leading-[1.3] node-content w-[130px] lg:w-[100px] h-[130px] lg:h-[100px] top-[260px] lg:top-[330px] left-[130px] lg:left-[140px] border border-white/30"
                           style={{ boxShadow: '0 0 60px rgba(0,0,0,1), inset 0 0 20px rgba(255,255,255,0.1)' }}>
                           <span className="drop-shadow-lg">Martinich<br />R&D</span>
                       </div>
@@ -238,7 +234,7 @@ const OurEcosystem = () => {
                           top: '-105px', left: '-105px',
                           boxShadow: '0 0 100px 50px rgba(255,255,255,0.5), 0 0 200px 100px rgba(255,255,255,0.2)'
                       }}>
-                      <span className="font-serif italic text-black text-[42px] tracking-widest pl-2">ILT</span>
+                      <span className="font-serif italic text-black text-[64px] lg:text-[42px] tracking-widest pl-2">ILT</span>
                   </div>
 
               </div>
