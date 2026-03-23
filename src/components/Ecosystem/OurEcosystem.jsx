@@ -180,6 +180,13 @@ const OurEcosystem = () => {
 
           <div className="relative w-full h-[550px] md:h-[800px] lg:h-[950px] overflow-hidden reveal-up">
               
+              {/* Premium Background Glows */}
+              <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                  <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0052FF] opacity-[0.12] blur-[120px] rounded-full"></div>
+                  <div className="absolute top-[50%] left-[40%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00B2FF] opacity-[0.08] blur-[100px] rounded-full animate-pulse-slow"></div>
+                  <div className="absolute top-[40%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#00FFD1] opacity-[0.05] blur-[140px] rounded-full animate-float"></div>
+              </div>
+              
               <div className="absolute left-1/2 -translate-x-1/2 top-12 text-center lg:left-0 lg:translate-x-0 lg:top-[45%] lg:-translate-y-1/2 lg:pl-16 lg:text-left z-10 w-full lg:w-auto px-6">
                   <span className="flex items-center justify-center lg:justify-start gap-2 font-sans text-[8px] md:text-[9px] font-bold tracking-[0.22em] uppercase text-white/60 mb-4 md:mb-5">
                       <span className="w-1 md:w-[5px] h-1 md:h-[5px] bg-white/60 inline-block"></span>
@@ -191,43 +198,43 @@ const OurEcosystem = () => {
               </div>
 
               {/* Ecosystem Graphic Wrapper */}
-              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.55] min-[370px]:scale-[0.62] sm:scale-[0.7] md:scale-[0.85] lg:scale-100 top-[55%] lg:top-[45%] left-1/2 lg:left-[88%] -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 transition-all duration-700">
+              <div ref={graphicRef} className="absolute pointer-events-none origin-center transform scale-[0.42] min-[400px]:scale-[0.48] sm:scale-[0.7] md:scale-[0.85] lg:scale-100 top-[62%] lg:top-[45%] left-1/2 lg:left-[88%] -translate-x-1/2 lg:-translate-x-0 -translate-y-1/2 transition-all duration-700">
                   
-                  {/* Outer Orbit (Radius 460, theta=225) */}
-                  <div className="absolute rounded-full border border-white/5 orbit-outer"
+                  {/* Outer Orbit (Radius 460) */}
+                  <div className="absolute rounded-full border border-white/10 orbit-outer shadow-[0_0_40px_rgba(255,255,255,0.03)]"
                       style={{ width: '920px', height: '920px', top: '-460px', left: '-460px' }}>
-                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[22px] lg:text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4] node-content w-[180px] lg:w-[120px] h-[180px] lg:h-[120px] top-[75px] left-[75px]"
-                          style={{ boxShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
-                          <span>Martinich<br />Consulting</span>
+                      <div className="absolute flex items-center justify-center rounded-full bg-[#11111199] backdrop-blur-md text-[15px] lg:text-[10px] text-[#eee] font-serif italic text-center leading-[1.3] node-content w-[140px] lg:w-[120px] h-[140px] lg:h-[120px] top-[100px] left-[100px] border border-white/20"
+                          style={{ boxShadow: '0 0 50px rgba(0,0,0,0.9), inset 0 0 20px rgba(255,255,255,0.08)' }}>
+                          <span className="drop-shadow-md">Martinich<br />Consulting</span>
                       </div>
                   </div>
 
-                  {/* Mid Orbit (Radius 320, theta=180) */}
-                  <div className="absolute rounded-full border border-white/5 orbit-mid"
+                  {/* Mid Orbit (Radius 320) */}
+                  <div className="absolute rounded-full border border-white/10 orbit-mid shadow-[0_0_35px_rgba(255,255,255,0.03)]"
                       style={{ width: '640px', height: '640px', top: '-320px', left: '-320px' }}>
-                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[22px] lg:text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4] node-content w-[170px] lg:w-[110px] h-[170px] lg:h-[110px] top-[235px] lg:top-[265px] left-[-85px] lg:left-[-55px]"
-                          style={{ boxShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
-                          <span>LUCA: The<br />Leader</span>
+                      <div className="absolute flex items-center justify-center rounded-full bg-[#11111199] backdrop-blur-md text-[15px] lg:text-[10px] text-[#eee] font-serif italic text-center leading-[1.3] node-content w-[130px] lg:w-[110px] h-[130px] lg:h-[110px] top-[250px] lg:top-[265px] left-[-65px] lg:left-[-55px] border border-white/20"
+                          style={{ boxShadow: '0 0 50px rgba(0,0,0,0.9), inset 0 0 20px rgba(255,255,255,0.08)' }}>
+                          <span className="drop-shadow-md">LUCA: The<br />Leader</span>
                       </div>
                   </div>
 
-                  {/* Inner Orbit (Radius 190, theta=135) */}
-                  <div className="absolute rounded-full border border-white/5 orbit-inner z-30"
+                  {/* Inner Orbit (Radius 190) */}
+                  <div className="absolute rounded-full border border-white/10 orbit-inner z-30 shadow-[0_0_30px_rgba(255,255,255,0.03)]"
                       style={{ width: '380px', height: '380px', top: '-190px', left: '-190px' }}>
-                      <div className="absolute flex items-center justify-center rounded-full bg-[#111] text-[22px] lg:text-[10px] text-[#ccc] font-serif italic text-center leading-[1.4] node-content w-[160px] lg:w-[100px] h-[160px] lg:h-[100px] top-[300px] lg:top-[330px] left-[120px] lg:left-[140px]"
-                          style={{ boxShadow: '0 0 40px rgba(0,0,0,0.8)' }}>
-                          <span>Martinich<br />R&D</span>
+                      <div className="absolute flex items-center justify-center rounded-full bg-[#11111199] backdrop-blur-md text-[14px] lg:text-[10px] text-[#eee] font-serif italic text-center leading-[1.3] node-content w-[120px] lg:w-[100px] h-[120px] lg:h-[100px] top-[300px] lg:top-[330px] left-[130px] lg:left-[140px] border border-white/20"
+                          style={{ boxShadow: '0 0 50px rgba(0,0,0,0.9), inset 0 0 20px rgba(255,255,255,0.08)' }}>
+                          <span className="drop-shadow-md">Martinich<br />R&D</span>
                       </div>
                   </div>
 
                   {/* ILT center white glowing core */}
-                  <div className="absolute rounded-full bg-white flex items-center justify-center z-20"
+                  <div className="absolute rounded-full bg-white flex items-center justify-center z-20 animate-pulse-slow"
                       style={{
                           width: '210px', height: '210px',
                           top: '-105px', left: '-105px',
-                          boxShadow: '0 0 100px 50px rgba(255,255,255,0.2), 0 0 200px 100px rgba(255,255,255,0.08)'
+                          boxShadow: '0 0 100px 50px rgba(255,255,255,0.4), 0 0 200px 100px rgba(255,255,255,0.15)'
                       }}>
-                      <span className="font-serif italic text-black text-[42px] tracking-widest pl-2">ILT</span>
+                      <span className="font-serif italic text-black text-[42px] tracking-widest pl-2 drop-shadow-sm">ILT</span>
                   </div>
 
               </div>
