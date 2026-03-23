@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Hero from '../components/Ecosystem/Hero';
 import OurEcosystem from '../components/Ecosystem/OurEcosystem';
 import FindEntryPoint from '../components/Ecosystem/FindEntryPoint';
 import JoinMovementSection from '../components/Ecosystem/JoinMovementSection';
+
+const MemoizedOurEcosystem = memo(OurEcosystem);
+const MemoizedFindEntryPoint = memo(FindEntryPoint);
 
 const EcosystemPage = () => {
     return (
@@ -33,8 +36,8 @@ const EcosystemPage = () => {
 
             <div className="relative z-10 w-full flex flex-col">
                 <Hero />
-                <OurEcosystem />
-                <FindEntryPoint />
+                <MemoizedOurEcosystem />
+                <MemoizedFindEntryPoint />
                 <JoinMovementSection />
             </div>
         </div>
