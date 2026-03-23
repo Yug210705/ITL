@@ -74,14 +74,16 @@ const OurEcosystem = () => {
   
   const [isHovered, setIsHovered] = useState(false);
   
-  // Keep active tab in view for mobile
+  // Keep active tab in view for  // Keep active tab in view for mobile - REMOVED scrollIntoView to prevent page jumping
   useEffect(() => {
+    // We only scroll the tab bar horizontally, not the whole page
     const activeTabElement = document.getElementById(`tab-${activeTab}`);
-    if (activeTabElement) {
-      activeTabElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center'
+    const tabContainer = activeTabElement?.parentElement;
+    if (activeTabElement && tabContainer) {
+      const scrollLeft = activeTabElement.offsetLeft - (tabContainer.offsetWidth / 2) + (activeTabElement.offsetWidth / 2);
+      tabContainer.scrollTo({
+        left: scrollLeft,
+        behavior: 'smooth'
       });
     }
   }, [activeTab]);
@@ -129,7 +131,7 @@ const OurEcosystem = () => {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: `top ${110 - (i * 15)}%`, // Start earlier
-            end: `top ${40 - (i * 10)}%`,   // Complete higher up in the viewport
+            end: `top ${20 - (i * 10)}%`,   // Complete higher up in the viewport
             scrub: 1.5,                     // Smooth but responsive
             toggleActions: "play reverse play reverse"
           }
@@ -176,7 +178,7 @@ const OurEcosystem = () => {
   }, [activeTab]);
 
   return (
-      <section ref={sectionRef} className="w-full relative pt-4 px-4 md:px-0 bg-transparent">
+      <section ref={sectionRef} className="w-full relative pt-4 px-0 md:px-0 bg-transparent">
 
           <div className="relative w-full h-[650px] md:h-[800px] lg:h-[950px] overflow-hidden reveal-up">
               
@@ -241,31 +243,32 @@ const OurEcosystem = () => {
           </div>
 
           {/* TABS + CONTENT - Pauses auto-scroll on hover */}
-          <div ref={contentRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className="w-full px-4 md:px-12 lg:px-20 pb-16 mt-6 md:mt-10 reveal-up">
+          <div ref={contentRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className="w-full px-0 md:px-12 lg:px-20 pb-16 mt-6 md:mt-10 reveal-up">
               <div className="flex flex-col w-full max-w-[1440px] mx-auto">
-                  <div className="flex w-full rounded-t-[20px] border border-[#252525] border-b-0 overflow-x-auto no-scrollbar">
+                  <div className="flex w-full overflow-x-auto no-scrollbar border-b border-[#252525]">
                       {tabsData.map((tab) => {
                           const isActive = activeTab === tab.id;
                           return (
                               <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                                  className={`flex-1 min-w-[160px] md:min-w-0 flex items-center justify-center h-[56px] transition-colors duration-200 border-r border-[#252525] last:border-r-0 ${isActive ? 'bg-[#161616]' : 'bg-[#090909] hover:bg-[#111]'}`} id={`tab-${tab.id}`}>
-                                  <span className={`font-sans text-[9px] md:text-[10px] tracking-[0.15em] font-semibold uppercase transition-colors ${isActive ? 'text-[#e8e8e8]' : 'text-[#3a3a3a] hover:text-[#555]'}`}>
+                                  className={`flex-1 min-w-[160px] md:min-w-0 flex items-center justify-center h-[64px] transition-all duration-300 relative ${isActive ? 'bg-[#161616]' : 'bg-transparent'}`} id={`tab-${tab.id}`}>
+                                  <span className={`font-sans text-[10px] md:text-[11px] tracking-[0.2em] font-bold uppercase transition-colors ${isActive ? 'text-white' : 'text-[#444]'}`}>
                                       {tab.label}
                                   </span>
+                                  {isActive && <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#006AFF]"></div>}
                               </button>
                           );
                       })}
                   </div>
 
-                  <div className="w-full bg-[#0f0f0f] border border-[#252525] rounded-b-[20px] relative overflow-hidden">
-                      <div className="absolute bottom-[-40px] left-[-20px] w-[300px] md:w-[400px] h-[200px] md:h-[280px] bg-[#1833ff] opacity-[0.1] blur-[80px] pointer-events-none rounded-full"></div>
+                  <div className="w-full bg-[#0f0f0f] border-x border-b border-[#252525] rounded-b-[24px] relative overflow-hidden">
+                      <div className="absolute bottom-[-40px] left-[-20px] w-[300px] md:w-[400px] h-[200px] md:h-[280px] bg-[#006AFF] opacity-[0.08] blur-[80px] pointer-events-none rounded-full"></div>
                       <div className="flex flex-col lg:flex-row min-h-[420px]">
-                          <div className="w-full lg:w-[42%] flex flex-col justify-center relative z-10 p-8 md:p-12 lg:p-14 lg:pl-16">
+                          <div className="w-full lg:w-[42%] flex flex-col justify-center relative z-10 p-5 pt-10 md:p-12 lg:p-14 lg:pl-16">
                               <div className="flex items-center gap-2 mb-5 tab-content-reveal">
-                                  <span className="w-[5px] h-[5px] bg-[#888] inline-block flex-shrink-0"></span>
-                                  <span className="font-sans text-[9px] font-bold tracking-[0.22em] uppercase text-[#777]">{activeData.subtitle}</span>
+                                  <span className="w-2 h-[1px] bg-[#006AFF] inline-block flex-shrink-0"></span>
+                                  <span className="font-sans text-[10px] font-bold tracking-[0.22em] uppercase text-[#666]">{activeData.subtitle}</span>
                               </div>
-                              <h3 className="font-serif text-[38px] lg:text-[50px] text-white mb-6 leading-[1.1] font-normal tab-content-reveal">{activeData.title}</h3>
+                              <h3 className="font-serif text-[42px] lg:text-[50px] text-white mb-8 leading-tight font-normal tab-content-reveal">{activeData.title}</h3>
                               <ul className="flex flex-col gap-3 mb-9 text-[#666] text-[13.5px] font-sans font-light tab-content-reveal">
                                   {activeData.bullets.map((bullet, idx) => (
                                       <li key={idx} className="flex items-start gap-3">
