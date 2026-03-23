@@ -165,23 +165,27 @@ const OurEcosystem = () => {
     let ctx = gsap.context(() => {
       gsap.from(".tab-content-reveal", {
         opacity: 0,
-        y: 20,
-        duration: 0.5,
+        duration: 0.6,
         stagger: 0.1,
         ease: "power2.out"
       });
       gsap.from(".mockup-reveal", {
         opacity: 0,
-        scale: 0.95,
-        duration: 0.6,
-        ease: "back.out(1.4)"
+        scale: 0.98,
+        duration: 0.8,
+        ease: "power2.out"
       });
     }, contentRef);
     return () => ctx.revert();
   }, [activeTab]);
 
   return (
-      <section ref={sectionRef} className="w-full relative pt-4 px-0 md:px-0 bg-transparent">
+      <section ref={sectionRef} className="w-full relative pt-4 px-0 md:px-0 bg-transparent isolation-container">
+          <style>{`
+              .isolation-container {
+                  contain: paint layout;
+              }
+          `}</style>
 
           <div className="relative w-full h-[650px] md:h-[800px] lg:h-[950px] overflow-hidden reveal-up">
               
