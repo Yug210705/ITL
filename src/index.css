@@ -79,3 +79,7 @@ html.lenis body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
+.isolation-container {
+    contain: paint layout;
+}

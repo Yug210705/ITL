@@ -179,7 +179,7 @@ const FindEntryPoint = () => {
             <div className="container mx-auto max-w-[1440px] px-6 md:px-12 relative z-10">
                 
                 {/* Header Section */}
-                <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2.5fr] gap-6 md:gap-8 items-start mb-6 md:mb-16 text-left w-full mx-auto reveal-find">
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2.5fr] gap-6 md:gap-8 items-start mb-6 md:mb-16 text-left w-full mx-auto">
                     {/* Left Header */}
                     <div className="relative pt-6 md:pt-14 md:pl-16">
                         <div className="absolute top-0 left-0 w-full h-[20px] overflow-hidden pointer-events-none hidden md:block">
